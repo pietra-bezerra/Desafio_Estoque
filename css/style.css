@@ -1,0 +1,27 @@
+/* Reset e Definições Globais */
+*{
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+
+    /* Fonte Usada */
+    font-family: "Geologica", sans-serif;
+
+    box-sizing: border-box;
+}
+/* Variaveis */
+:root{
+    --cor1: #2E2E2E;
+    --cor2: #6E6E6E;
+    --cor3: #A23E2E;
+    --cor4: #D9C7A3;
+    --corFundoTeste: #333;
+
+    --corBordaBtn: #FFF;
+    
+    --arredondamentoCaixaGrande: 40px;
+    --arredondamentoInputBtns: 15px;
+
+    --bordaBtns: 2px solid var(--corBordaBtn);
+}
