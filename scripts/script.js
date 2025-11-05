@@ -1,4 +1,3 @@
-
 function mudarTema(){
     var tema = document.getElementById("temaSelecionado");
 
