@@ -18,10 +18,38 @@
     --cor4: #D9C7A3;
     --corFundoTeste: #333;
 
+    --corBtn: #FFF;
+
     --corBordaBtn: #FFF;
     
     --arredondamentoCaixaGrande: 40px;
     --arredondamentoInputBtns: 15px;
 
     --bordaBtns: 2px solid var(--corBordaBtn);
+}
+
+body{
+    height: 100vh;
+    width: 100%;
+    background: var(--corFundoTeste);
+}
+
+/* Botão de Mudar tema */
+#temaSelecionado{
+    position: fixed;
+    font-size: 30px;
+    top: 15px;
+    left: 15px;
+    border-radius: 50%;
+    padding: 10px 15px;
+    cursor: pointer;
+    color: var(--corBtn);
+    border: none;
+    outline: none;
+    background: none;
+
+    &:hover{
+        scale: 1.2;
+        background: rgba(0,0,0,0.2);
+    }
 }
