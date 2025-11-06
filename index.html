@@ -1,28 +1,56 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ERP</title>
 
     <!-- Estilização -->
-     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 
-     <!-- Bootstrap Icons -->
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
     <!-- Fonte Usada (Diretamente do Google Fonts)  -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&display=swap" rel="stylesheet">
 
+    <!-- Icone da Página -->
+    <link rel="shortcut icon" href="assets/imgs/logo.png" type="image/x-icon">
 </head>
+
 <body>
     <button onclick="mudarTema()" id="temaSelecionado" class="temaNoturno">
         <i class="bi bi-moon-stars-fill"></i>
     </button>
-
+    <main class="caixa-main-login">
+        <form action="" class="caixa-form-login">
+            <img src="assets/imgs/logo.png" alt="Logo">
+            <div class="caixa-div-login">
+                <div class="caixa-input-login">
+                    <label for="email"><i class="bi bi-person"></i>E-mail</label>
+                    <input type="email" id="email" placeholder="exemplo@exemplo.com">
+                </div>
+                <div class="caixa-input-login">
+                    <label for="senha"><i class="bi bi-shield-lock"></i>Senha</label>
+                    <input type="password" id="senha" placeholder="********">
+                </div>
+            </div>
+            <div class="caixa-btn-login">
+                <button type="submit">Entrar<i class="bi bi-box-arrow-in-right"></i></button>
+                <div class="caixa-opcoes-btn-login">
+                    <a href="">Cadastre-se</a>
+                </div>
+                <div class="caixa-opcoes-btn-login">
+                    <a href="">Esqueceu sua senha?</a>
+                </div>
+            </div>
+        </form>
+    </main>
     <!-- JS -->
     <script src="scripts/script.js"></script>
 </body>
+
 </html>

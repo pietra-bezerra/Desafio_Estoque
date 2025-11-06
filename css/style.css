@@ -1,5 +1,5 @@
 /* Reset e Definições Globais */
-*{
+* {
     margin: 0;
     padding: 0;
     top: 0;
@@ -7,35 +7,39 @@
 
     /* Fonte Usada */
     font-family: "Geologica", sans-serif;
-
+    outline: none;
     box-sizing: border-box;
 }
+
 /* Variaveis */
-:root{
+:root {
     --cor1: #2E2E2E;
     --cor2: #6E6E6E;
     --cor3: #A23E2E;
     --cor4: #D9C7A3;
     --corFundoTeste: #333;
 
+    --corFundoLogin: rgba(110, 110, 110, 0.5);
+
     --corBtn: #FFF;
 
     --corBordaBtn: #FFF;
-    
+
     --arredondamentoCaixaGrande: 40px;
     --arredondamentoInputBtns: 15px;
 
     --bordaBtns: 2px solid var(--corBordaBtn);
+
+    --sombra: 1px 1px 3px 5px rgba(255, 255, 255, 0.25);
 }
 
-body{
+body {
     height: 100vh;
     width: 100%;
-    background: var(--corFundoTeste);
 }
 
 /* Botão de Mudar tema */
-#temaSelecionado{
+#temaSelecionado {
     position: fixed;
     font-size: 30px;
     top: 15px;
@@ -48,8 +52,106 @@ body{
     outline: none;
     background: none;
 
-    &:hover{
+    &:hover {
         scale: 1.2;
-        background: rgba(0,0,0,0.2);
+        background: rgba(0, 0, 0, 0.2);
     }
+}
+
+/* Praticamente virou o Body mas tem um motivo espécifico */
+.caixa-main-login {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('../assets/imgs/teste.png');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Caixa de Login */
+.caixa-form-login {
+    width: 50%;
+    max-width: 750px;
+    padding-bottom: 20px;
+    height: 600px;
+    background: var(--corFundoLogin);
+    border-radius: var(--arredondamentoCaixaGrande);
+    box-shadow: var(--sombra);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Logo da Empresa */
+.caixa-form-login img {
+    width: 240px;
+}
+
+/* Essa aqui é auxiliar para caixa-input */
+.caixa-div-login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    gap: 21px;
+}
+
+/* Div feita exclusivamente para os inputs */
+.caixa-input-login{
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+/* Input */
+.caixa-input-login input {
+    width: 90%;
+    max-width: 742px;
+    max-height: 80px;
+    padding: 20px;
+    border-radius: var(--arredondamentoInputBtns);
+    border: none;
+}
+
+/* Label */
+.caixa-input-login label {
+    display: block;
+    width: 90%;
+    font-size: 20px;
+    color: #FFF;
+}
+
+/* Div exclusiva para botões e links */
+.caixa-btn-login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+/* Botão */
+.caixa-btn-login button{
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: var(--arredondamentoInputBtns);
+    border: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 150px;
+    cursor: pointer;
+}
+
+/* "Links" */
+.caixa-btn-login a{
+    color: #FFF;
+    text-decoration: none;
 }
