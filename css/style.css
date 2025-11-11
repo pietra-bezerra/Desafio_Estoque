@@ -45,7 +45,7 @@ body {
 }
 
 /* Botão de Mudar tema */
-#temaSelecionado {
+#btnDiferente, #temaSelecionado {
     position: fixed;
     font-size: 30px;
     top: 15px;
@@ -89,25 +89,31 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    animation: animacaocaixa 5s infinite linear ;
+    animation: animacaocaixa 5s infinite linear;
 }
+
 @keyframes animacaocaixa {
-    0%{
+    0% {
         box-shadow: 1px 1px 2px 3px rgba(0, 101, 252, 0.25);
     }
-    25%{
+
+    25% {
         box-shadow: 1px 1px 2px 3px rgba(0, 101, 252, 0.5);
     }
-    50%{
+
+    50% {
         box-shadow: 1px 1px 2px 3px rgba(0, 101, 252, 0.75);
     }
-    75%{
+
+    75% {
         box-shadow: 1px 1px 2px 3px rgba(0, 101, 252, 0.25);
     }
-    100%{
+
+    100% {
         box-shadow: 1px 1px 2px 3px rgba(0, 101, 252, 0.5);
     }
 }
+
 /* Logo da Empresa */
 .caixa-form-login img {
     width: 240px;
@@ -124,7 +130,7 @@ body {
 }
 
 /* Div feita exclusivamente para os inputs */
-.caixa-input-login{
+.caixa-input-login {
     width: 90%;
     display: flex;
     align-items: center;
@@ -143,33 +149,40 @@ body {
     border: 2px solid transparent;
     animation: animacaoinput 5s infinite linear;
 
-    &:focus{
-        box-shadow: 1px 1px 2px 3px rgba(0, 101, 252, 0.25); ;
+    &:focus {
+        box-shadow: 1px 1px 2px 3px rgba(0, 101, 252, 0.25);
+        ;
         border: 2px solid rgb(0, 101, 252);
     }
 }
+
 @keyframes animacaoinput {
-    0%{
+    0% {
         border-color: rgb(40, 124, 252);
         box-shadow: 1px 1px 2px 3px rgba(0, 101, 252, 0.25);
     }
-    25%{
+
+    25% {
         border-color: rgb(60, 137, 253);
         box-shadow: 1px 1px 2px 3px rgba(0, 101, 252, 0.5);
     }
-    50%{
+
+    50% {
         border-color: rgb(94, 157, 253);
         box-shadow: 1px 1px 2px 3px rgba(0, 101, 252, 0.75);
     }
-    75%{
+
+    75% {
         box-shadow: 1px 1px 2px 3px rgba(0, 101, 252, 0.25);
         border-color: rgb(60, 137, 253);
     }
-    100%{
+
+    100% {
         border-color: rgb(40, 124, 252);
         box-shadow: 1px 1px 2px 3px rgba(0, 101, 252, 0.5);
     }
 }
+
 /* Label */
 .caixa-input-login label {
     display: block;
@@ -179,7 +192,7 @@ body {
 }
 
 /* Div exclusiva para botões e links */
-.caixa-btn-login{
+.caixa-btn-login {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -188,7 +201,7 @@ body {
 }
 
 /* Botão */
-.caixa-btn-login button{
+.caixa-btn-login button {
     margin-top: 20px;
     padding: 10px;
     border-radius: var(--arredondamentoInputBtns);
@@ -199,20 +212,116 @@ body {
     width: 150px;
     cursor: pointer;
 
-    &:hover{
+    &:hover {
         background: rgb(0, 101, 252);
         color: #FFF;
     }
 }
 
 /* "Links" */
-.caixa-btn-login a{
+.caixa-btn-login a {
     color: #FFF;
     text-decoration: none;
 
-    &:hover{
+    &:hover {
         text-decoration: underline;
         text-decoration-color: rgb(0, 101, 252);
     }
+}
+
+/* Seção "Esqueceu sua senha" */
+.caixa-sec-esqueceu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+
+    display: none; /* Começa oculta */
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(0, 0, 0, 0.6); /* Fundo escurecido para destacar o modal */
+    backdrop-filter: blur(5px); /* Efeito de desfoque leve no fundo */
+    z-index: 999; /* Fica acima das outras caixas */
+}
+
+/* Caixa interna (formulário esqueceu senha) */
+.caixa-sec-esqueceu .caixa-form-login {
+    width: 50%;
+    max-width: 750px;
+    height: auto;
+    padding-bottom: 20px;
+    background: var(--corFundoLogin);
+    border-radius: var(--arredondamentoCaixaGrande);
+    box-shadow: var(--sombra2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: animacaocaixa 5s infinite linear;
+    position: relative; /* Necessário pro botão “X” */
+}
+
+/* Botão de fechar */
+.caixa-sec-esqueceu #btnDiferente {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 25px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.2);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.caixa-sec-esqueceu #btnDiferente:hover {
+    background: rgba(0, 101, 252, 0.4);
+    transform: scale(1.1);
+}
+
+/* Ajuste da logo */
+.caixa-sec-esqueceu img {
+    width: 200px;
+    margin-bottom: 20px;
+}
+
+/* Centralização dos inputs */
+.caixa-sec-esqueceu .caixa-div-login {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+/* Botões */
+.caixa-sec-esqueceu .caixa-btn-login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.caixa-sec-esqueceu .caixa-btn-login button {
+    background: #fff;
+    color: #000;
+    font-weight: 600;
+    border-radius: var(--arredondamentoInputBtns);
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    transition: 0.3s;
+}
+
+.caixa-sec-esqueceu .caixa-btn-login button:hover {
+    background: rgb(0, 101, 252);
+    color: #fff;
+}
+
+.caixa-sec-cadastro{
+    display: none;
 }
 

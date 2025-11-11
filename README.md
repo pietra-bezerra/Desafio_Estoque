@@ -10,7 +10,7 @@ Desenvolver um sistema web para controlar o estoque de produtos, evitando falta 
 
 ## Tecnologias Ultilizadas
 
-- JavaScript ES6
+- JavaScript ES6+
 - PHP
 - MySQL
 - Linguagem de Marcação

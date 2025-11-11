@@ -1,0 +1,143 @@
+/* Reset e Definições Globais */
+* {
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+
+    /* Fonte Usada */
+    font-family: "Geologica", sans-serif;
+    outline: none;
+    box-sizing: border-box;
+
+    transition: 0.5s all;
+    scroll-behavior: smooth;
+}
+
+/* Variaveis */
+:root {
+    --cor1: #2E2E2E;
+    --cor2: #6E6E6E;
+    --cor3: #A23E2E;
+    --cor4: #D9C7A3;
+    --corFundoTeste: #333;
+
+    --corFundoLogin: rgba(110, 110, 110, 0.5);
+
+    --corBtn: #FFF;
+
+    --corBordaBtn: #FFF;
+
+    --arredondamentoCaixaGrande: 40px;
+    --arredondamentoInputBtns: 15px;
+
+    --bordaBtns: 2px solid var(--corBordaBtn);
+
+    --sombra: 1px 1px 3px 5px rgba(255, 255, 255, 0.25);
+    --sombra2: 1px 1px 2px 3px rgba(0, 101, 252, 0.25);
+
+    --fundoimg: url('../assets/imgs/teste.jpg');
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    padding-left: 210px;
+}
+
+.nav-bar {
+    display: flex;
+    flex-direction: column;
+    width: 210px;
+    height: 100%;
+    position: fixed;
+    color: var(--corBtn);
+    background: var();
+}
+
+.nav-header {
+    background: var(--corFundoTeste);
+    height: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-links {
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.nav-links a {
+    width: 100%;
+    border-bottom: 2px solid var(--corFundoLogin);
+    text-decoration: none;
+    text-align: justify;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 45%;
+    color: var(--cor1);
+
+    &:hover {
+        background: var(--corFundoTeste);
+        color: var(--corBtn);
+    }
+}
+
+.nav-options {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.nav-options a {
+    background: var(--corFundoTeste);
+    width: 95%;
+    text-align: center;
+    color: var(--corBtn);
+    text-decoration: none;
+    padding: 10px;
+}
+
+.main-conteudo {
+    width: 100%;
+    height: 100%;
+    background: var(--corFundoLogin);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    gap: 15%;
+}
+
+.sec-config {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    width: 99%;
+    justify-content: flex-end;
+}
+
+.sec-caixas {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 90%;
+}
+
+.caixas {
+    background: var(--corBtn);
+    width: 15%;
+    height: 150px;
+    padding: 20px;
+    border-radius: var(--arredondamentoInputBtns);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}

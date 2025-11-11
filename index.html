@@ -41,20 +41,77 @@
             <div class="caixa-btn-login">
                 <button type="submit">Entrar<i class="bi bi-box-arrow-in-right"></i></button>
                 <div class="caixa-opcoes-btn-login">
-                    <a href="">Cadastre-se</a>
+                    <a href="#" onclick="showCadastro()">Cadastre-se</a>
                 </div>
                 <div class="caixa-opcoes-btn-login">
-                    <a href="">Esqueceu sua senha?</a>
+                    <a href="#" onclick="showEsqueceu()">Esqueceu sua senha?</a>
                 </div>
             </div>
         </form>
+
+        <section class="caixa-sec-cadastro">
+            <form action="" class="caixa-form-login">
+                <button id="btnDiferente" onclick="document.querySelector('.caixa-sec-cadastro').style.display = 'none'"><i class="bi bi-x"></i></button>
+                <div class="ladoUm ">
+                    <div class="caixa-input-login">
+                        <label for="nome"><i class="bi bi-person"></i>Nome</label>
+                        <input type="nome" id="nome" placeholder="Seu N. Completo">
+                    </div>
+                    <div class="caixa-input-login">
+                        <label for="email"><i class="bi bi-person"></i>E-mail</label>
+                        <input type="email" id="email" placeholder="exemplo@exemplo.com">
+                    </div>
+                    <div class="caixa-input-login">
+                        <label for="cpf"><i class="bi bi-person"></i>CPF</label>
+                        <input type="cpf" id="cpf" placeholder="000.000.000-00">
+                    </div>
+                    <div class="caixa-input-login">
+                        <label for="codigo"><i class="bi bi-person"></i>Código de Identificação</label>
+                        <input type="codigo" id="codigo" placeholder="2BNA3RSD">
+                    </div>
+                    <div class="caixa-input-login">
+                        <label for="senha"><i class="bi bi-shield-lock"></i>Senha</label>
+                        <input type="password" id="senha" placeholder="********">
+                    </div>
+                </div>
+                <div class="ladoDois">
+                    <img src="assets/imgs/logo.png" alt="Logo">
+                    <button>Cadastrar</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="caixa-sec-esqueceu">
+            <form action="" class="caixa-form-login">
+                <button id="btnDiferente" onclick="document.querySelector('.caixa-sec-esqueceu').style.display = 'none'"><i class="bi bi-x"></i></button>
+                <img src="assets/imgs/logo.png" alt="Logo">
+                <div class="caixa-div-login">
+                    <div class="caixa-input-login">
+                        <label for="email"><i class="bi bi-person"></i>E-mail</label>
+                        <input type="email" id="email" placeholder="exemplo@exemplo.com">
+                    </div>
+                    <div class="caixa-input-login">
+                        <label for="codigo"><i class="bi bi-person"></i>Código de Identificação</label>
+                        <input type="codigo" id="codigo" placeholder="2BNA3RSD">
+                    </div>
+                    <div class="caixa-input-login">
+                        <label for="senha"><i class="bi bi-shield-lock"></i>Senha</label>
+                        <input type="password" id="senha" placeholder="********">
+                    </div>
+                </div>
+                <div class="caixa-btn-login">
+                    <button type="submit">Entrar<i class="bi bi-box-arrow-in-right"></i></button>
+                    <div class="caixa-opcoes-btn-login">
+                        <a href="#" onclick="showCadastro()">Cadastre-se</a>
+                    </div>
+                    <div class="caixa-opcoes-btn-login">
+                        <a href="#" onclick="showEsqueceu()">Esqueceu sua senha?</a>
+                    </div>
+                </div>
+            </form>
+        </section>
     </main>
-    <section class="caixa-principal">
-        <div class="">
 
-        </div>
-
-    </section>
     <!-- JS -->
     <script src="scripts/script.js"></script>
 </body>
