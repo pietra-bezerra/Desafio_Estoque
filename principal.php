@@ -8,6 +8,7 @@
 
     <!-- Estilização -->
     <link rel="stylesheet" href="css/principal.css">
+    <link rel="stylesheet" href="css/nav.css">
 
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
@@ -22,19 +23,9 @@
 </head>
 
 <body>
-    <nav class="nav-bar">
-        <div class="nav-header">
-            <h2>Menu</h2>
-        </div>
-        <div class="nav-links">
-            <a href="">Início</a>
-            <a href="">Cadastro de Produto</a>
-            <a href="">Gestão de Estoque</a>
-        </div>
-        <div class="nav-options">
-            <a href="">Sair</a>
-        </div>
-    </nav>
+    <?php 
+        include "php/componentes/nav.php";
+    ?>
     <main class="main-conteudo">
         <section class="sec-config">
             <p>Nome Funcionário</p>

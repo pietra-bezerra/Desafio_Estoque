@@ -1,0 +1,79 @@
+/* Reset e Definições Globais */
+* {
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+
+    /* Fonte Usada */
+    font-family: "Geologica", sans-serif;
+    outline: none;
+    box-sizing: border-box;
+
+    transition: 0.5s all;
+    scroll-behavior: smooth;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    padding-left: 210px;
+}
+
+.nav-bar {
+    display: flex;
+    flex-direction: column;
+    width: 210px;
+    height: 100%;
+    position: fixed;
+    color: #FFF;
+    border-right: 1px solid #333;
+}
+
+.nav-header {
+    background: #333;
+    height: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-links {
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.nav-links a {
+    width: 100%;
+    border-bottom: 2px solid rgba(110, 110, 110, 0.5);
+    text-decoration: none;
+    text-align: justify;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 45%;
+    color: #2E2E2E;
+
+    &:hover {
+        background: #333;
+        color: #FFF;
+    }
+}
+
+.nav-options {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.nav-options a {
+    background: #333;
+    width: 95%;
+    text-align: center;
+    color: #FFF;
+    text-decoration: none;
+    padding: 10px;
+}

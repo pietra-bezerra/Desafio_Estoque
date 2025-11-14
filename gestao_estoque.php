@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ERP</title>
+
+    <!-- Estilização -->
+    <link rel="stylesheet" href="css/gestao_estoque.css">
+    <link rel="stylesheet" href="css/nav.css">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <!-- Fonte Usada (Diretamente do Google Fonts)  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- Icone da Página -->
+    <link rel="shortcut icon" href="assets/imgs/logo.png" type="image/x-icon">
+</head>
+
+<body>
+    <?php
+    include "php/componentes/nav.php";
+    ?>
+    <main class="main-conteudo">
+        <section class="sec-config">
+            <label for="pesquisa"><i class="bi bi-search"></i></label>
+            <input type="text" name="pesquisa" id="pesquisa" placeholder="Buscar Produto">
+            <img src="assets/imgs/logo.png" alt="Logo" width="100px">
+        </section>
+        <header>
+            <h2>Gestão de Estoque</h2>
+        </header>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Descrição</th>
+                    <th>Unidade</th>
+                    <th>Quantidade</th>
+                    <th>Mínimo</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Cimento</td>
+                    <td>Clíquer, gesso</td>
+                    <td>50 Kg</td>
+                    <td>20</td>
+                    <td>15</td>
+                    <td><div>
+                        <button id="editar">Editar<i class="bi bi-pencil-square"></i></button>
+                        <button id="remover">Remover<i class="bi bi-trash3-fill"></i></button>
+                    </div></td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Cimento</td>
+                    <td>Clíquer, gesso</td>
+                    <td>50 Kg</td>
+                    <td>20</td>
+                    <td>15</td>
+                    <td><div>
+                        <button id="editar">Editar<i class="bi bi-pencil-square"></i></button>
+                        <button id="remover">Remover<i class="bi bi-trash3-fill"></i></button>
+                    </div></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </main>
+</body>
+
+</html>
