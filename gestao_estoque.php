@@ -56,10 +56,12 @@
                     <td>50 Kg</td>
                     <td>20</td>
                     <td>15</td>
-                    <td><div>
-                        <button id="editar">Editar<i class="bi bi-pencil-square"></i></button>
-                        <button id="remover">Remover<i class="bi bi-trash3-fill"></i></button>
-                    </div></td>
+                    <td>
+                        <div>
+                            <button id="editar">Editar<i class="bi bi-pencil-square"></i></button>
+                            <button id="remover">Remover<i class="bi bi-trash3-fill"></i></button>
+                        </div>
+                    </td>
                 </tr>
                 <tr>
                     <td>1</td>
@@ -68,15 +70,64 @@
                     <td>50 Kg</td>
                     <td>20</td>
                     <td>15</td>
-                    <td><div>
-                        <button id="editar">Editar<i class="bi bi-pencil-square"></i></button>
-                        <button id="remover">Remover<i class="bi bi-trash3-fill"></i></button>
-                    </div></td>
+                    <td>
+                        <div>
+                            <button id="editar">Editar<i class="bi bi-pencil-square"></i></button>
+                            <button id="remover">Remover<i class="bi bi-trash3-fill"></i></button>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Cimento</td>
+                    <td>Clíquer, gesso</td>
+                    <td>50 Kg</td>
+                    <td>20</td>
+                    <td>15</td>
+                    <td>
+                        <div>
+                            <button id="editar">Editar<i class="bi bi-pencil-square"></i></button>
+                            <button id="remover">Remover<i class="bi bi-trash3-fill"></i></button>
+                        </div>
+                    </td>
                 </tr>
             </tbody>
         </table>
 
+        <button id="add_movimentacao" onclick="showMovimentacao()">Adicionar Movimentação</button>
+
     </main>
+
+    <section class="caixa-sec-movimentacao">
+        <form action="" class="caixa-form-movimentacao">
+            <button id="btnDiferente" onclick="document.querySelector('.caixa-sec-movimentacao').style.display = 'none'"><i class="bi bi-x"></i></button>
+            <div class="caixa-div-movimentacao">
+                <div class="caixa-input-movimentacao">
+                    <label for="id_produto"><i class="bi bi-box-fill"></i>ID</label>
+                    <input type="number" id="id_produto" name="id_produto" placeholder="ID do Produto">
+                </div>
+                <div class="caixa-input-movimentacao">
+                    <label for="entrada_saida"><i class="bi bi-box-arrow-right"></i>Entrada & Saída</label>
+                    <select name="entrada_saida" id="entrada_saida" name="entrada_saida">
+                        <option value="Sem Valor" disabled selected>Selecione uma Opção</option>
+                        <option value="Entrada">Entrada</option>
+                        <option value="Saída">Saída</option>
+                    </select>
+                </div>
+                <div class="caixa-input-movimentacao">
+                    <label for="data_movimentacao"><i class="bi bi-calendar-date-fill"></i>Data Movimentação</label>
+                    <input type="date" id="data_movimentacao" value="">
+                </div>
+            </div>
+            <div class="caixa-btn-movimentacao">
+                <button type="submit">Cadastrar <i class="bi bi-box-arrow-in-right"></i></button>
+            </div>
+        </form>
+    </section>
+
+    <script src="scripts/script.js" defer></script>
+
+
 </body>
 
 </html>

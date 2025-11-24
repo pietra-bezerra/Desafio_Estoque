@@ -30,6 +30,7 @@ body {
     flex-direction: column;
     position: relative;
     gap: 7%;
+    overflow: auto;
 }
 
 .sec-config {
@@ -41,7 +42,7 @@ body {
     justify-content: flex-end;
 }
 
-.sec-config label{
+.sec-config label {
     font-weight: bold;
     font-size: 20px;
 }
@@ -102,7 +103,7 @@ table tbody tr td {
     }
 }
 
-table tbody tr td div{
+table tbody tr td div {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -110,7 +111,7 @@ table tbody tr td div{
     gap: 15px;
 }
 
-table tbody tr td div button{
+table tbody tr td div button {
     width: 85px;
     height: 50px;
     display: flex;
@@ -122,26 +123,217 @@ table tbody tr td div button{
     font-weight: bold;
     cursor: pointer;
 
-    &:active{
-        position: relative; 
+    &:active {
+        position: relative;
         top: 5px;
     }
 }
 
-#remover{
+#remover {
     background: rgb(248, 101, 101);
     border-color: rgb(206, 0, 0);
-    &:hover{
+
+    &:hover {
         background: rgb(206, 0, 0);
         border-color: rgb(248, 101, 101);
     }
 }
 
-#editar{
+#editar {
     background: rgb(94, 158, 255);
     border-color: rgb(0, 102, 255);
-    &:hover{    
+
+    &:hover {
         background: rgb(0, 102, 255);
         border-color: rgb(94, 158, 255);
     }
+}
+
+#add_movimentacao{
+    border-radius: 40px;
+    border: 2px double #FFF;
+    background: #333;
+    color: #FFF;
+    padding: 15px;
+    cursor: pointer;
+
+    &:hover{
+        background: #000;
+    }
+}
+
+#btnDiferente, #temaSelecionado {
+    position: fixed;
+    font-size: 30px;
+    top: 15px;
+    left: 15px;
+    border-radius: 50%;
+    padding: 10px 15px;
+    cursor: pointer;
+    color: #FFF;
+    border: none;
+    outline: none;
+    background: none;
+
+    &:hover {
+        scale: 1.2;
+        background: rgba(0, 0, 0, 0.2);
+    }
+}
+
+/* Seção "Esqueceu sua senha" */
+.caixa-sec-movimentacao {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+
+    display: none; /* Começa oculta */
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(0, 0, 0, 0.6); /* Fundo escurecido para destacar o modal */
+    backdrop-filter: blur(5px); /* Efeito de desfoque leve no fundo */
+    z-index: 999; /* Fica acima das outras caixas */
+}
+
+/* Caixa interna (formulário movimentacao senha) */
+.caixa-sec-movimentacao .caixa-form-movimentacao {
+    width: 50%;
+    max-width: 750px;
+    height: 500px;
+    padding-bottom: 20px;
+    background: rgba(110, 110, 110, 0.5);
+    border-radius: 40px;
+    box-shadow: 1px 1px 2px 3px rgba(0, 101, 252, 0.25);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: animacaocaixa 5s infinite linear;
+    position: relative; /* Necessário pro botão “X” */
+}
+
+/* Botão de fechar */
+.caixa-sec-movimentacao #btnDiferente {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 25px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.2);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.caixa-sec-movimentacao #btnDiferente:hover {
+    background: rgba(0, 101, 252, 0.4);
+    transform: scale(1.1);
+}
+
+/* Centralização dos inputs */
+.caixa-sec-movimentacao .caixa-div-movimentacao {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}   
+
+/* Botões */
+.caixa-sec-movimentacao .caixa-btn-movimentacao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.caixa-sec-movimentacao .caixa-btn-movimentacao button {
+    background: #fff;
+    color: #000;
+    font-weight: 600;
+    border-radius: 15px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    transition: 0.3s;
+}
+
+.caixa-sec-movimentacao .caixa-btn-movimentacao button:hover {
+    background: rgb(0, 101, 252);
+    color: #fff;
+}
+
+/* Essa aqui é auxiliar para caixa-input */
+.caixa-div-movimentacao {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    gap: 21px;
+}
+
+/* Div feita exclusivamente para os inputs */
+.caixa-input-movimentacao {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+/* Input */
+.caixa-input-movimentacao input, .caixa-input-movimentacao select {
+    width: 90%;
+    max-width: 742px;
+    max-height: 80px;
+    padding: 20px;
+    border-radius: 15px;
+    border: 2px solid transparent;
+    animation: animacaoinput 5s infinite linear;
+
+    &:focus {
+        box-shadow: 1px 1px 2px 3px rgba(0, 101, 252, 0.25);
+        border: 2px solid rgb(0, 101, 252);
+    }
+}
+
+@keyframes animacaoinput {
+    0% {
+        border-color: rgb(40, 124, 252);
+        box-shadow: 1px 1px 2px 3px rgba(0, 101, 252, 0.25);
+    }
+
+    25% {
+        border-color: rgb(60, 137, 253);
+        box-shadow: 1px 1px 2px 3px rgba(0, 101, 252, 0.5);
+    }
+
+    50% {
+        border-color: rgb(94, 157, 253);
+        box-shadow: 1px 1px 2px 3px rgba(0, 101, 252, 0.75);
+    }
+
+    75% {
+        box-shadow: 1px 1px 2px 3px rgba(0, 101, 252, 0.25);
+        border-color: rgb(60, 137, 253);
+    }
+
+    100% {
+        border-color: rgb(40, 124, 252);
+        box-shadow: 1px 1px 2px 3px rgba(0, 101, 252, 0.5);
+    }
+}
+
+/* Label */
+.caixa-input-movimentacao label {
+    display: block;
+    width: 90%;
+    font-size: 20px;
+    color: #FFF;
 }

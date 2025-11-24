@@ -8,6 +8,6 @@
             <a href="gestao_estoque.php">Gestão de Estoque</a>
         </div>
         <div class="nav-options">
-            <a href="">Sair</a>
+            <a href="index.html">Sair</a>
         </div>
 </nav>

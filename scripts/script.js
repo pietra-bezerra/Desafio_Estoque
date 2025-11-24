@@ -21,3 +21,9 @@ function showEsqueceu(){
 
     caixaEsq.style.display = "flex";
 }
+
+function showMovimentacao(){
+    const caixaMov = document.querySelector(".caixa-sec-movimentacao");
+
+    caixaMov.style.display = "flex";
+}
