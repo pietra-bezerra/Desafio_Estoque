@@ -125,6 +125,44 @@
         </form>
     </section>
 
+<section class="caixa-sec-edit">
+    <form action="" class="caixa-form-edit">
+        <button type="button" class="btnFecharEdit" onclick="fecharEdit()"><i class="bi bi-x"></i></button>
+
+        <div class="caixa-div-edit">
+            <div class="caixa-input-edit">
+                <label for="edit_nome">Nome Produto</label>
+                <input type="text" id="edit_nome" name="nome">
+            </div>
+
+            <div class="caixa-input-edit">
+                <label for="edit_descricao">Descrição</label>
+                <input type="text" id="edit_descricao" name="descricao">
+            </div>
+
+            <div class="caixa-input-edit">
+                <label for="edit_unidade">Unidade</label>
+                <input type="text" id="edit_unidade" name="unidade">
+            </div>
+
+            <div class="caixa-input-edit">
+                <label for="edit_quantidade">Quantidade</label>
+                <input type="number" id="edit_quantidade" name="quantidade">
+            </div>
+
+            <div class="caixa-input-edit">
+                <label for="edit_minimo">Mínimo</label>
+                <input type="number" id="edit_minimo" name="minimo">
+            </div>
+
+            <div class="caixa-btn-edit">
+                <button type="submit">Salvar</button>
+            </div>
+        </div>
+    </form>
+</section>
+
+
     <script src="scripts/script.js" defer></script>
 
 
