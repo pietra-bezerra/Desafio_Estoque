@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar</title>
+</head>
+<body>
+    <form method="post">
+        <div>
+            <div>
+                <label for="id">ID</label>
+                <input type="number" name="id">
+                <label for="nomPro">Nome do Produto</label>
+                <input type="text" name="nomePro">
+                <label for="desc"></label>
+                <input type="text" name="descri">
+                <label for="uniMedi">Unidade de Medida</label>
+                <input type="text" name="uniMedi">
+                <label for="quant">Quantidade</label>
+                <input type="number" name="quant">
+                <label for="mim">Mínimo</label>
+                <input type="number" name="mim">
+            </div>
+            <div>
+                <input type="submit" value="Editar">
+            </div>
+        </div>
+    </form>
+
+    <?php
+    if($_SERVER["REQUEST_METHOD"] == "POST"){
+        $id = $_POST["id"];
+        $nomeProd = $_POST["nomePro"];
+        $desc = $_POST["descri"];
+        $uniMe = $_POST["uniMedi"];
+        $quant = $_POST["quant"];
+        $min = $_POST["mim"];
+        
+        $servername = "localhost";
+        $database = "desafio_estoque";
+        $username = "root";
+        $password = "";
+
+        // Conexão com o banco de dados
+        $conn = mysqli_connect($servername, $username, $password, $database);
+        
+        // Verifica a conexão e aplica a estilização de erro
+        if (!$conn) {
+            echo '';
+            // Usamos die() para interromper a execução após o erro fatal de conexão.
+            die("Falha na conexão: " . mysqli_connect_error());
+           
+        }
+
+        echo "Conectado com sucesso";
+
+        
+        $sql = "UPDATE roupas 
+                SET 
+                id = '$id',
+                nome = '$nomeProd',
+                descrisao = '$desc',
+                unidade = '$uniMe',
+                quantidade = '$quant',
+                minimo = '$min'
+                ";
+                
+        if (mysqli_query($conn, $sql)) {
+            echo'';
+        } else {
+            echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+        }
+        
+        mysqli_close($conn);
+    }
+    ?>
+</body>
+</html>
