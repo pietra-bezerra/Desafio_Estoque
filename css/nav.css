@@ -76,4 +76,8 @@ body {
     color: #FFF;
     text-decoration: none;
     padding: 10px;
+
+    &:hover{
+        background: #000;
+    }
 }
