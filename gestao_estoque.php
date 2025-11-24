@@ -48,6 +48,7 @@
                 </tr>
             </thead>
             <tbody>
+                <!-- Só coloquei para testes tem que substituir pelos itens cadastrados no banco -->
                 <tr>
                     <td>1</td>
                     <td>Cimento</td>

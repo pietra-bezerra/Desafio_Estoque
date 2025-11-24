@@ -1,0 +1,101 @@
+/* Reset e Definições Globais */
+* {
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+
+    /* Fonte Usada */
+    font-family: "Geologica", sans-serif;
+    outline: none;
+    box-sizing: border-box;
+
+    transition: 0.5s all;
+    scroll-behavior: smooth;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    padding-left: 210px;
+}
+
+.main-conteudo {
+    width: 100%;
+    height: 100%;
+    background: #FFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    gap: 7%;
+}
+
+.sec-config {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 99%;
+    justify-content: flex-end;
+}
+
+.sec-form-prod {
+    width: 50%;
+    height: 600px;
+}
+
+.caixa-form-prod {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #333;
+    border-radius: 40px;
+}
+
+.ladoUm,
+.ladoDois {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 15%;
+}
+
+.ladoDois header {
+    color: #FFF;
+}
+
+.caixa-input-prod {
+    width: 80%;
+}
+
+.caixa-input-prod input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
+
+.ladoDois button {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 15px;
+    border: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 150px;
+    cursor: pointer;
+
+    &:hover {
+        background: rgb(0, 101, 252);
+        color: #FFF;
+    }
+}
