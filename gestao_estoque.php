@@ -48,49 +48,45 @@
                 </tr>
             </thead>
             <tbody>
-                <!-- Só coloquei para testes tem que substituir pelos itens cadastrados no banco -->
-                <tr>
-                    <td>1</td>
-                    <td>Cimento</td>
-                    <td>Clíquer, gesso</td>
-                    <td>50 Kg</td>
-                    <td>20</td>
-                    <td>15</td>
-                    <td>
-                        <div>
-                            <button id="editar">Editar<i class="bi bi-pencil-square"></i></button>
-                            <button id="remover">Remover<i class="bi bi-trash3-fill"></i></button>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Cimento</td>
-                    <td>Clíquer, gesso</td>
-                    <td>50 Kg</td>
-                    <td>20</td>
-                    <td>15</td>
-                    <td>
-                        <div>
-                            <button id="editar">Editar<i class="bi bi-pencil-square"></i></button>
-                            <button id="remover">Remover<i class="bi bi-trash3-fill"></i></button>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Cimento</td>
-                    <td>Clíquer, gesso</td>
-                    <td>50 Kg</td>
-                    <td>20</td>
-                    <td>15</td>
-                    <td>
-                        <div>
-                            <button id="editar">Editar<i class="bi bi-pencil-square"></i></button>
-                            <button id="remover">Remover<i class="bi bi-trash3-fill"></i></button>
-                        </div>
-                    </td>
-                </tr>
+                <?php
+                $sv = "localhost";
+                $user = "root";
+                $pass = "";
+                $db = "desafio_estoque";
+                $port = 3312;
+
+                $con = mysqli_connect($sv, $user, $pass, $db, $port);
+
+                $selectProdutos = "SELECT * FROM gestao";
+
+                $executando = mysqli_query($con, $selectProdutos);
+
+                if (mysqli_num_rows($executando) > 0) {
+
+                    // Existem produtos
+                    while ($linha = mysqli_fetch_array($executando)) {
+                        echo "<tr>";
+                        echo "<td>" . $linha['idgestao'] . "</td>";
+                        echo "<td>" . $linha['nome'] . "</td>";
+                        echo "<td>" . $linha['descricao'] . "</td>";
+                        echo "<td>" . $linha['unidade'] . "</td>";
+                        echo "<td>" . $linha['quantidade'] . "</td>";
+                        echo "<td>" . $linha['minimo'] . "</td>";
+                        echo "<td>
+                                <div>
+                                    <button id='editar'>Editar<i class='bi bi-pencil-square'></i></button>
+                                    <button id='remover'>Remover<i class='bi bi-trash3-fill'></i></button>
+                                </div>
+                            </td>";
+                        echo "</tr>";
+                    }
+                } else {
+                    // Nenhum produto encontrado
+                    echo "<tr>
+                            <td colspan='7' style='text-align: center; padding: 20px;'>Nenhum produto cadastrado</td>
+                        </tr>";
+                }
+                ?>
             </tbody>
         </table>
 
@@ -104,7 +100,33 @@
             <div class="caixa-div-movimentacao">
                 <div class="caixa-input-movimentacao">
                     <label for="id_produto"><i class="bi bi-box-fill"></i>ID</label>
-                    <input type="number" id="id_produto" name="id_produto" placeholder="ID do Produto">
+                    <select name="id_produto" id="id_produto">
+                        <?php
+                        $sv = "localhost";
+                        $user = "root";
+                        $pass = "";
+                        $db = "desafio_estoque";
+                        $port = 3312;
+
+                        $con = mysqli_connect($sv, $user, $pass, $db, $port);
+                        $selectProdutos = "SELECT * FROM gestao";
+
+                        $executando = mysqli_query($con, $selectProdutos);
+
+                        if (mysqli_num_rows($executando) > 0) {
+                            echo "<option value='Sem Valor' disabled selected> Selecione o Produto </option>";
+
+                            // Existem produtos
+                            while ($linha = mysqli_fetch_array($executando)) {
+                                echo "<option value='".$linha['idgestao']."'>".$linha['nome']."</option>";
+                            }
+                        } else {
+                            // Nenhum produto encontrado
+                            echo "<option value='Sem Valor'>Nenhum Produto Cadastrado</option>";
+                        }
+                        ?>
+                    </select>
+                    <!-- <input type="number" id="id_produto" name="id_produto" placeholder="ID do Produto"> -->
                 </div>
                 <div class="caixa-input-movimentacao">
                     <label for="entrada_saida"><i class="bi bi-box-arrow-right"></i>Entrada & Saída</label>
@@ -125,38 +147,37 @@
         </form>
     </section>
 
-<section class="caixa-sec-edit">
-    <form action="" class="caixa-form-edit">
-        <button type="button" class="btnFecharEdit" onclick="fecharEdit()"><i class="bi bi-x"></i></button>
+    <section class="caixa-sec-edit">
+        <form action="" class="caixa-form-edit">
+            <button type="button" class="btnFecharEdit" onclick="fecharEdit()"><i class="bi bi-x"></i></button>
 
-        <div class="caixa-div-edit">
-            <div class="caixa-input-edit">
-                <label for="edit_nome">Nome Produto</label>
-                <input type="text" id="edit_nome" name="nome">
+            <div class="caixa-div-edit">
+                <div class="caixa-input-edit">
+                    <label for="edit_nome">Nome Produto</label>
+                    <input type="text" id="edit_nome" name="nome">
+                </div>
+
+                <div class="caixa-input-edit">
+                    <label for="edit_descricao">Descrição</label>
+                    <input type="text" id="edit_descricao" name="descricao">
+                </div>
+
+                <div class="caixa-input-edit">
+                    <label for="edit_unidade">Unidade</label>
+                    <input type="text" id="edit_unidade" name="unidade">
+                </div>
+
+                <div class="caixa-input-edit">
+                    <label for="edit_minimo">Mínimo</label>
+                    <input type="number" id="edit_minimo" name="minimo">
+                </div>
+
+                <div class="caixa-btn-edit">
+                    <button type="submit">Salvar</button>
+                </div>
             </div>
-
-            <div class="caixa-input-edit">
-                <label for="edit_descricao">Descrição</label>
-                <input type="text" id="edit_descricao" name="descricao">
-            </div>
-
-            <div class="caixa-input-edit">
-                <label for="edit_unidade">Unidade</label>
-                <input type="text" id="edit_unidade" name="unidade">
-            </div>
-
-            <div class="caixa-input-edit">
-                <label for="edit_minimo">Mínimo</label>
-                <input type="number" id="edit_minimo" name="minimo">
-            </div>
-
-            <div class="caixa-btn-edit">
-                <button type="submit">Salvar</button>
-            </div>
-        </div>
-    </form>
-</section>
-
+        </form>
+    </section>
 
     <script src="scripts/script.js" defer></script>
 

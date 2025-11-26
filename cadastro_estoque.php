@@ -38,7 +38,7 @@
         </header>
 
         <section class="sec-form-prod">
-            <form action="" class="caixa-form-prod">
+            <form action="" class="caixa-form-prod" method="post">
                 <div class="ladoUm">
                     <div class="caixa-input-prod">
                         <input type="text" id="nome" name="nome" placeholder="Nome do Produto">
@@ -70,33 +70,33 @@
     </main>
 
     <?php
-        if($_SERVER['REQUEST_METHOD'] == 'POST'){
-            $sv = "localhost";
-            $user = "root";
-            $pass = "";
-            $db = "desafio_estoque";
-            $port = 3312;
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $sv = "localhost";
+        $user = "root";
+        $pass = "";
+        $db = "desafio_estoque";
+        $port = 3312;
 
-            $con = mysqli_connect($sv,$user,$pass,$db,$port);
+        $con = mysqli_connect($sv, $user, $pass, $db, $port);
 
-            $criandoTab =  "CREATE TABLE IF NOT EXISTS gestao(
+        $criandoTab =  "CREATE TABLE IF NOT EXISTS gestao(
                 idgestao INT AUTO_INCREMENT PRIMARY KEY,
                 nome VARCHAR(100) NOT NULL,
                 descricao VARCHAR(500) NOT NULL,
                 unidade VARCHAR(100) NOT NULL,
                 quantidade INT(100),
-                minimo INT(100),
+                minimo INT(100)
             )";
 
-            mysqli_query($con,$criandoTab);
+        mysqli_query($con, $criandoTab);
 
-            $nome = $_POST['nome'];
-            $descricao = $_POST['descricao'];
-            $unidade = $_POST['unidade'];
-            $quantidade = $_POST['quantidade'];
-            $minimo = $_POST['minimo'];
+        $nome = $_POST['nome'];
+        $descricao = $_POST['descricao'];
+        $unidade = $_POST['unidade'];
+        $quantidade = $_POST['quantidade'];
+        $minimo = $_POST['minimo'];
 
-            $inserindo = "INSERT INTO gestao(
+        $inserindo = "INSERT INTO gestao(
                 nome,
                 descricao,
                 unidade,
@@ -109,8 +109,10 @@
                 '$quantidade',
                 '$minimo'
             )";
-        }
-    
+
+        mysqli_query($con, $inserindo);
+    }
+
     ?>
 
 
