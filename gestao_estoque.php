@@ -146,11 +146,6 @@
             </div>
 
             <div class="caixa-input-edit">
-                <label for="edit_quantidade">Quantidade</label>
-                <input type="number" id="edit_quantidade" name="quantidade">
-            </div>
-
-            <div class="caixa-input-edit">
                 <label for="edit_minimo">Mínimo</label>
                 <input type="number" id="edit_minimo" name="minimo">
             </div>

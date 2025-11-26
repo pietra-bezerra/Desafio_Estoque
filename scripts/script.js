@@ -23,7 +23,6 @@ function editarProduto(row) {
     document.getElementById("edit_nome").value = cols[1].textContent;
     document.getElementById("edit_descricao").value = cols[2].textContent;
     document.getElementById("edit_unidade").value = cols[3].textContent;
-    document.getElementById("edit_quantidade").value = cols[4].textContent;
     document.getElementById("edit_minimo").value = cols[5].textContent;
 
     document.querySelector(".caixa-sec-edit").style.display = "flex";

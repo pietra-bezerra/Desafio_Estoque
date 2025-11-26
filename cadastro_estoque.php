@@ -41,16 +41,16 @@
             <form action="" class="caixa-form-prod">
                 <div class="ladoUm">
                     <div class="caixa-input-prod">
-                        <input type="text" id="nome" placeholder="Nome do Produto">
+                        <input type="text" id="nome" name="nome" placeholder="Nome do Produto">
                     </div>
                     <div class="caixa-input-prod">
-                        <input type="text" id="descricao" placeholder="Descrição">
+                        <input type="text" id="descricao" name="descricao" placeholder="Descrição">
                     </div>
                     <div class="caixa-input-prod">
-                        <input type="text" id="unidade" placeholder="Unidade De Medida">
+                        <input type="text" id="unidade" name="unidade" placeholder="Unidade De Medida">
                     </div>
                     <div class="caixa-input-prod">
-                        <input type="number" id="quantidade" placeholder="Quantidade">
+                        <input type="number" id="quantidade" name="quantidade" placeholder="Quantidade">
                     </div>
                 </div>
                 <div class="ladoDois">
@@ -58,7 +58,7 @@
                         <h1>Adicionar</h1>
                     </header>
                     <div class="caixa-input-prod">
-                        <input type="number" id="minimo" placeholder="Mínimo">
+                        <input type="number" id="minimo" name="minimo" placeholder="Mínimo">
                     </div>
                     <button>Cadastrar</button>
                 </div>
@@ -69,6 +69,49 @@
 
     </main>
 
+    <?php
+        if($_SERVER['REQUEST_METHOD'] == 'POST'){
+            $sv = "localhost";
+            $user = "root";
+            $pass = "";
+            $db = "desafio_estoque";
+            $port = 3312;
+
+            $con = mysqli_connect($sv,$user,$pass,$db,$port);
+
+            $criandoTab =  "CREATE TABLE IF NOT EXISTS gestao(
+                idgestao INT AUTO_INCREMENT PRIMARY KEY,
+                nome VARCHAR(100) NOT NULL,
+                descricao VARCHAR(500) NOT NULL,
+                unidade VARCHAR(100) NOT NULL,
+                quantidade INT(100),
+                minimo INT(100),
+            )";
+
+            mysqli_query($con,$criandoTab);
+
+            $nome = $_POST['nome'];
+            $descricao = $_POST['descricao'];
+            $unidade = $_POST['unidade'];
+            $quantidade = $_POST['quantidade'];
+            $minimo = $_POST['minimo'];
+
+            $inserindo = "INSERT INTO gestao(
+                nome,
+                descricao,
+                unidade,
+                quantidade,
+                minimo
+            )VALUES(
+                '$nome',
+                '$descricao',
+                '$unidade',
+                '$quantidade',
+                '$minimo'
+            )";
+        }
+    
+    ?>
 
 
 </body>
