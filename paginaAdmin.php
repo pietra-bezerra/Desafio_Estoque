@@ -87,21 +87,27 @@ $user_name = $_SESSION['user_nome'] ?? 'Funcionário';
                 <i class="bi bi-speedometer2 text-lg"></i>
                 <span>Dashboard</span>
             </a>
-            <a href="./estoque.php" class="flex items-center space-x-3 p-3 rounded-lg text-gray-300 hover:bg-gray-700 transition duration-150">
+            <a href="#" class="flex items-center space-x-3 p-3 rounded-lg text-gray-300 hover:bg-gray-700 transition duration-150">
                 <i class="bi bi-box-seam text-lg"></i>
                 <span>Estoque</span>
             </a>
-            <a href="./produtos.php" class="flex items-center space-x-3 p-3 rounded-lg text-gray-300 hover:bg-gray-700 transition duration-150">
+            <a href="#" class="flex items-center space-x-3 p-3 rounded-lg text-gray-300 hover:bg-gray-700 transition duration-150">
                 <i class="bi bi-cart4 text-lg"></i>
-                <span>Produtos</span>
+                <span>Vendas</span>
             </a>
-    
+            <a href="#" class="flex items-center space-x-3 p-3 rounded-lg text-gray-300 hover:bg-gray-700 transition duration-150">
+                <i class="bi bi-people text-lg"></i>
+                <span>Clientes</span>
+            </a>
+            <a href="#" class="flex items-center space-x-3 p-3 rounded-lg text-gray-300 hover:bg-gray-700 transition duration-150">
+                <i class="bi bi-gear text-lg"></i>
+                <span>Configurações</span>
             </a>
         </div>
 
         <!-- Botão de Sair -->
         <div class="absolute bottom-4 w-[calc(16rem-2rem)]">
-            <a href="./deus.html" class="flex items-center justify-center space-x-3 p-3 rounded-lg bg-red-600 text-white font-medium hover:bg-red-700 transition duration-150 w-full">
+            <a href="logout.php" class="flex items-center justify-center space-x-3 p-3 rounded-lg bg-red-600 text-white font-medium hover:bg-red-700 transition duration-150 w-full">
                 <i class="bi bi-box-arrow-right text-lg"></i>
                 <span>Sair</span>
             </a>

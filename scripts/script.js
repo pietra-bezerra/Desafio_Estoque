@@ -18,6 +18,5 @@ function showCadastro(){
 
 function showEsqueceu(){
     const caixaEsq = document.querySelector(".caixa-sec-esqueceu");
-
     caixaEsq.style.display = "flex";
 }

@@ -26,20 +26,20 @@
         <i class="bi bi-moon-stars-fill"></i>
     </button>
     <main class="caixa-main-login">
-        <form action="" class="caixa-form-login">
+        <form action="login.php" class="caixa-form-login" method="post">
             <img src="assets/imgs/logo.png" alt="Logo">
             <div class="caixa-div-login">
                 <div class="caixa-input-login">
                     <label for="email"><i class="bi bi-person"></i>E-mail</label>
-                    <input type="email" id="email" placeholder="exemplo@exemplo.com">
+                    <input type="email" id="email" placeholder="exemplo@exemplo.com" name="email2">
                 </div>
                 <div class="caixa-input-login">
                     <label for="senha"><i class="bi bi-shield-lock"></i>Senha</label>
-                    <input type="password" id="senha" placeholder="********">
+                    <input type="password" id="senha" placeholder="********" name="senha2">
                 </div>
             </div>
             <div class="caixa-btn-login">
-                <button type="submit">Entrar<i class="bi bi-box-arrow-in-right"></i></button>
+                <button type="submit"><a href="./principal.php">Entrar<i class="bi bi-box-arrow-in-right"></i></a></button>
                 <div class="caixa-opcoes-btn-login">
                     <a href="#" onclick="showCadastro()">Cadastre-se</a>
                 </div>
@@ -50,28 +50,24 @@
         </form>
 
         <section class="caixa-sec-cadastro">
-            <form action="" class="caixa-form-login">
+            <form action="cadastro.php" class="caixa-form-login" method="post">
                 <button id="btnDiferente" onclick="document.querySelector('.caixa-sec-cadastro').style.display = 'none'"><i class="bi bi-x"></i></button>
-                <div class="ladoUm ">
+                <div class="ladoUm "> 
                     <div class="caixa-input-login">
                         <label for="nome"><i class="bi bi-person"></i>Nome</label>
-                        <input type="nome" id="nome" placeholder="Seu N. Completo">
+                        <input type="nome" id="nome" name="nome" placeholder="Seu N. Completo">
                     </div>
                     <div class="caixa-input-login">
                         <label for="email"><i class="bi bi-envelope-at-fill"></i>E-mail</label>
-                        <input type="email" id="email" placeholder="exemplo@exemplo.com">
+                        <input type="email" id="email"  name="email" placeholder="exemplo@exemplo.com">
                     </div>
                     <div class="caixa-input-login">
                         <label for="cpf"><i class="bi bi-person-vcard"></i>CPF</label>
-                        <input type="cpf" id="cpf" placeholder="000.000.000-00">
-                    </div>
-                    <div class="caixa-input-login">
-                        <label for="codigo"><i class="bi bi-file-medical"></i>Código de Identificação</label>
-                        <input type="codigo" id="codigo" placeholder="2BNA3RSD">
+                        <input type="cpf" id="cpf" name="cpf" placeholder="000.000.000-00">
                     </div>
                     <div class="caixa-input-login">
                         <label for="senha"><i class="bi bi-shield-lock"></i>Senha</label>
-                        <input type="password" id="senha" placeholder="********">
+                        <input type="password" id="senha" name="senha" placeholder="********">
                     </div>
                 </div>
                 <div class="ladoDois">
@@ -82,21 +78,21 @@
         </section>
 
         <section class="caixa-sec-esqueceu">
-            <form action="" class="caixa-form-login">
+            <form action="cadastro.php" class="caixa-form-login" method="post" >
                 <button id="btnDiferente" onclick="document.querySelector('.caixa-sec-esqueceu').style.display = 'none'"><i class="bi bi-x"></i></button>
                 <img src="assets/imgs/logo.png" alt="Logo">
                 <div class="caixa-div-login">
                     <div class="caixa-input-login">
                         <label for="email"><i class="bi bi-person"></i>E-mail</label>
-                        <input type="email" id="email" placeholder="exemplo@exemplo.com">
-                    </div>
+                        <input type="email" id="email" name="email" placeholder="exemplo@exemplo.com">
+                    </div>    
                     <div class="caixa-input-login">
                         <label for="codigo"><i class="bi bi-person"></i>Código de Identificação</label>
-                        <input type="codigo" id="codigo" placeholder="2BNA3RSD">
+                        <input type="codigo" id="codigo" name="codigoId" placeholder="2BNA3RSD">
                     </div>
                     <div class="caixa-input-login">
                         <label for="senha"><i class="bi bi-shield-lock"></i>Senha</label>
-                        <input type="password" id="senha" placeholder="********">
+                        <input type="password" id="senha" name="senha" placeholder="********">
                     </div>
                 </div>
                 <div class="caixa-btn-login">
@@ -117,3 +113,4 @@
 </body>
 
 </html>
+

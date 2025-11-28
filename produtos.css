@@ -1,0 +1,98 @@
+   /* Define a fonte Geologica como a principal */
+   @import url('https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&display=swap');
+        
+   /* Configurações globais para o tema dark */
+   body {
+       font-family: 'Geologica', sans-serif;
+       min-height: 100vh;
+       display: flex; /* Para layout de sidebar + conteúdo */
+       background-color: #111827; /* bg-gray-900 (Fundo principal dark) */
+       color: #E5E7EB; /* text-gray-200 */
+   }
+
+   /* Classes customizadas para a barra lateral */
+   .sidebar {
+       width: 16rem; /* w-64 */
+       flex-shrink: 0;
+       background-color: #1F2937; /* bg-gray-800 */
+   }
+
+   /* Estilo para a imagem de perfil/logo na config */
+   .sec-config img {
+       transition: transform 0.3s ease;
+   }
+   .sec-config img:hover {
+       transform: scale(1.05);
+   }
+
+   /* Estilo para os cards do dashboard */
+   .dashboard-card {
+       box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -2px rgba(0, 0, 0, 0.5);
+       transition: transform 0.2s, box-shadow 0.2s;
+   }
+   .dashboard-card:hover {
+       transform: translateY(-4px);
+       box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -4px rgba(0, 0, 0, 0.5);
+   }
+
+        /* Define a fonte Geologica como a principal */
+        @import url('https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&display=swap');
+        
+        /* Configurações globais para o tema dark e layout flex (sidebar + conteúdo) */
+        body {
+            font-family: 'Geologica', sans-serif;
+            min-height: 100vh;
+            display: flex; 
+            background-color: #111827; /* Fundo principal dark */
+            color: #E5E7EB; /* Cor de texto padrão */
+        }
+        
+        /* O main-conteudo deve ocupar o espaço restante (flex-1), simulando que nav.php está ao lado */
+        .main-conteudo {
+            /* Adicione padding extra no topo para dar espaço ao cabeçalho */
+            padding-top: 2rem; 
+        }
+
+        /* ------------------ ESTILOS CUSTOMIZADOS ------------------ */
+
+        /* Estilo para a caixa de Inputs */
+        .caixa-input-prod input, .caixa-input-prod select { 
+            /* Classes base: largura total, padding, arredondamento */
+            @apply w-full p-3 rounded-lg text-white; 
+            /* Estilo Dark Mode: fundo cinza mais escuro, borda sutil */
+            @apply bg-gray-700 border border-gray-600 placeholder-gray-400; 
+            /* Transição para suavizar os efeitos */
+            @apply transition duration-300 ease-in-out;
+            /* Efeito de Foco: Borda e Sombra mais visíveis em Indigo */
+            @apply focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500;
+        }
+
+        /* Efeito de Hover/Scale para o Card do Formulário (Visual Profissional) */
+        .sec-form-prod {
+            /* Sombra interna para destacar no dark mode */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -2px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .sec-form-prod:hover {
+            transform: scale(1.005); 
+            /* Sombra mais destacada no hover */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -4px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Estilo para o Botão de Cadastro */
+        .btn-cadastro {
+            @apply transition duration-300 transform; 
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+        }
+        .btn-cadastro:hover {
+            @apply bg-indigo-700; 
+            transform: scale(1.02); 
+            /* Sombra neon suave do botão */
+            box-shadow: 0 10px 15px -3px rgba(79, 70, 229, 0.3), 0 4px 6px -4px rgba(79, 70, 229, 0.3); 
+        }
+
+        /* Estilo para o layout da barra de configuração (logo + título) */
+        .sec-config {
+            @apply flex items-center justify-between pb-6 border-b border-gray-700 mb-8;
+        }
+        

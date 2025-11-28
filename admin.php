@@ -95,8 +95,13 @@ $user_name = $_SESSION['user_nome'] ?? 'Funcionário';
                 <i class="bi bi-cart4 text-lg"></i>
                 <span>Produtos</span>
             </a>
-    
+
+            <a href="./admin.php" class="flex items-center space-x-3 p-3 rounded-lg text-gray-300 hover:bg-gray-700 transition duration-150">
+                <i class="bi bi-cart4 text-lg"></i>
+                <span>admin</span>
             </a>
+    
+        
         </div>
 
         <!-- Botão de Sair -->

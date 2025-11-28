@@ -1,0 +1,36 @@
+   /* Define a fonte Geologica como a principal */
+   @import url('https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&display=swap');
+        
+   /* Configurações globais para o tema dark */
+   body {
+       font-family: 'Geologica', sans-serif;
+       min-height: 100vh;
+       display: flex; /* Para layout de sidebar + conteúdo */
+       background-color: #111827; /* bg-gray-900 (Fundo principal dark) */
+       color: #E5E7EB; /* text-gray-200 */
+   }
+
+   /* Classes customizadas para a barra lateral */
+   .sidebar {
+       width: 16rem; /* w-64 */
+       flex-shrink: 0;
+       background-color: #1F2937; /* bg-gray-800 */
+   }
+
+   /* Estilo para a imagem de perfil/logo na config */
+   .sec-config img {
+       transition: transform 0.3s ease;
+   }
+   .sec-config img:hover {
+       transform: scale(1.05);
+   }
+
+   /* Estilo para os cards do dashboard */
+   .dashboard-card {
+       box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -2px rgba(0, 0, 0, 0.5);
+       transition: transform 0.2s, box-shadow 0.2s;
+   }
+   .dashboard-card:hover {
+       transform: translateY(-4px);
+       box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -4px rgba(0, 0, 0, 0.5);
+   }
