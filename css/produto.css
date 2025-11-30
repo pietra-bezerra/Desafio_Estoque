@@ -27,11 +27,7 @@ body {
 }
 
 .logo-pagina {
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
-    opacity: .8;
-    transition: .2s;
+    width: 100px;
 }
 .logo-pagina:hover {
     transform: scale(1.05);

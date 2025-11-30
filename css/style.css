@@ -1,5 +1,6 @@
 /* Botão de Mudar tema */
-#btnDiferente, #temaSelecionado {
+#btnDiferente,
+#temaSelecionado {
     position: fixed;
     font-size: 30px;
     top: 15px;
@@ -7,14 +8,14 @@
     border-radius: 50%;
     padding: 10px 15px;
     cursor: pointer;
-    color: #FFF;
+    color: #E5E7EB;
     border: none;
     outline: none;
     background: none;
 
     &:hover {
         scale: 1.2;
-        background: rgba(0, 0, 0, 0.2);
+        background: rgba(255, 255, 255, 0.08);
     }
 }
 
@@ -25,7 +26,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--fundoimg);
+    background: #111827;
     overflow-x: hidden;
 }
 
@@ -36,9 +37,9 @@
     min-width: 450px;
     padding-bottom: 20px;
     height: 600px;
-    background: rgba(110, 110, 110, 0.5);
+    background: rgba(31, 41, 55, 0.8);
     border-radius: 40px;
-    box-shadow: 1px 1px 3px 5px rgba(255, 255, 255, 0.25);
+    box-shadow: 1px 1px 3px 5px rgba(129, 140, 248, 0.25);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -48,23 +49,23 @@
 
 @keyframes animacaocaixa {
     0% {
-        box-shadow: 1px 1px 2px 3px rgba(0, 101, 252, 0.25);
+        box-shadow: 1px 1px 2px 3px rgba(129, 140, 248, 0.25);
     }
 
     25% {
-        box-shadow: 1px 1px 2px 3px rgba(0, 101, 252, 0.5);
+        box-shadow: 1px 1px 2px 3px rgba(129, 140, 248, 0.45);
     }
 
     50% {
-        box-shadow: 1px 1px 2px 3px rgba(0, 101, 252, 0.75);
+        box-shadow: 1px 1px 2px 3px rgba(129, 140, 248, 0.75);
     }
 
     75% {
-        box-shadow: 1px 1px 2px 3px rgba(0, 101, 252, 0.25);
+        box-shadow: 1px 1px 2px 3px rgba(129, 140, 248, 0.30);
     }
 
     100% {
-        box-shadow: 1px 1px 2px 3px rgba(0, 101, 252, 0.5);
+        box-shadow: 1px 1px 2px 3px rgba(129, 140, 248, 0.45);
     }
 }
 
@@ -102,37 +103,39 @@
     border-radius: 15px;
     border: 2px solid transparent;
     animation: animacaoinput 5s infinite linear;
+    background: #1F2937;
+    color: #fff;
 
     &:focus {
-        box-shadow: 1px 1px 2px 3px rgba(0, 101, 252, 0.25);
-        border: 2px solid rgb(0, 101, 252);
+        box-shadow: 1px 1px 2px 3px #818cf8;
+        border: 2px solid #2563EB;
     }
 }
 
 @keyframes animacaoinput {
     0% {
-        border-color: rgb(40, 124, 252);
-        box-shadow: 1px 1px 2px 3px rgba(0, 101, 252, 0.25);
+        border-color: #818cf8;
+        box-shadow: 1px 1px 2px 3px #818cf8;
     }
 
     25% {
-        border-color: rgb(60, 137, 253);
-        box-shadow: 1px 1px 2px 3px rgba(0, 101, 252, 0.5);
+        border-color: #4F46E5;
+        box-shadow: 1px 1px 2px 3px rgba(129, 140, 248, 0.5);
     }
 
     50% {
-        border-color: rgb(94, 157, 253);
-        box-shadow: 1px 1px 2px 3px rgba(0, 101, 252, 0.75);
+        border-color: #6366F1;
+        box-shadow: 1px 1px 2px 3px rgba(129, 140, 248, 0.8);
     }
 
     75% {
-        box-shadow: 1px 1px 2px 3px rgba(0, 101, 252, 0.25);
-        border-color: rgb(60, 137, 253);
+        border-color: #4F46E5;
+        box-shadow: 1px 1px 2px 3px rgba(129, 140, 248, 0.3);
     }
 
     100% {
-        border-color: rgb(40, 124, 252);
-        box-shadow: 1px 1px 2px 3px rgba(0, 101, 252, 0.5);
+        border-color: #818cf8;
+        box-shadow: 1px 1px 2px 3px rgba(129, 140, 248, 0.5);
     }
 }
 
@@ -141,16 +144,7 @@
     display: block;
     width: 90%;
     font-size: 20px;
-    color: #FFF;
-}
-
-/* Div exclusiva para botões e links */
-.caixa-btn-login {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
+    color: #E5E7EB;
 }
 
 /* Botão */
@@ -164,9 +158,11 @@
     align-items: center;
     width: 150px;
     cursor: pointer;
+    background: #2563EB;
+    color: #fff;
 
     &:hover {
-        background: rgb(0, 101, 252);
+        background: #1e40af;
         color: #FFF;
     }
 }

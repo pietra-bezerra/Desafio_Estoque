@@ -46,10 +46,7 @@ body {
 }
 
 .logo-sec {
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
-    opacity: 0.7;
+    width: 100px;
 }
 
 /* HEADER */
