@@ -1,0 +1,172 @@
+/* Botão de Mudar tema */
+#btnDiferente, #temaSelecionado {
+    position: fixed;
+    font-size: 30px;
+    top: 15px;
+    left: 15px;
+    border-radius: 50%;
+    padding: 10px 15px;
+    cursor: pointer;
+    color: #FFF;
+    border: none;
+    outline: none;
+    background: none;
+
+    &:hover {
+        scale: 1.2;
+        background: rgba(0, 0, 0, 0.2);
+    }
+}
+
+/* Praticamente virou o Body mas tem um motivo espécifico */
+.caixa-main-login {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--fundoimg);
+    overflow-x: hidden;
+}
+
+/* Caixa de Login */
+.caixa-form-login {
+    width: 50%;
+    max-width: 750px;
+    min-width: 450px;
+    padding-bottom: 20px;
+    height: 600px;
+    background: rgba(110, 110, 110, 0.5);
+    border-radius: 40px;
+    box-shadow: 1px 1px 3px 5px rgba(255, 255, 255, 0.25);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: animacaocaixa 5s infinite linear;
+}
+
+@keyframes animacaocaixa {
+    0% {
+        box-shadow: 1px 1px 2px 3px rgba(0, 101, 252, 0.25);
+    }
+
+    25% {
+        box-shadow: 1px 1px 2px 3px rgba(0, 101, 252, 0.5);
+    }
+
+    50% {
+        box-shadow: 1px 1px 2px 3px rgba(0, 101, 252, 0.75);
+    }
+
+    75% {
+        box-shadow: 1px 1px 2px 3px rgba(0, 101, 252, 0.25);
+    }
+
+    100% {
+        box-shadow: 1px 1px 2px 3px rgba(0, 101, 252, 0.5);
+    }
+}
+
+/* Logo da Empresa */
+.caixa-form-login img {
+    width: 240px;
+}
+
+/* Essa aqui é auxiliar para caixa-input */
+.caixa-div-login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    gap: 21px;
+}
+
+/* Div feita exclusivamente para os inputs */
+.caixa-input-login {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+/* Input */
+.caixa-input-login input {
+    width: 90%;
+    max-width: 742px;
+    max-height: 80px;
+    padding: 20px;
+    border-radius: 15px;
+    border: 2px solid transparent;
+    animation: animacaoinput 5s infinite linear;
+
+    &:focus {
+        box-shadow: 1px 1px 2px 3px rgba(0, 101, 252, 0.25);
+        border: 2px solid rgb(0, 101, 252);
+    }
+}
+
+@keyframes animacaoinput {
+    0% {
+        border-color: rgb(40, 124, 252);
+        box-shadow: 1px 1px 2px 3px rgba(0, 101, 252, 0.25);
+    }
+
+    25% {
+        border-color: rgb(60, 137, 253);
+        box-shadow: 1px 1px 2px 3px rgba(0, 101, 252, 0.5);
+    }
+
+    50% {
+        border-color: rgb(94, 157, 253);
+        box-shadow: 1px 1px 2px 3px rgba(0, 101, 252, 0.75);
+    }
+
+    75% {
+        box-shadow: 1px 1px 2px 3px rgba(0, 101, 252, 0.25);
+        border-color: rgb(60, 137, 253);
+    }
+
+    100% {
+        border-color: rgb(40, 124, 252);
+        box-shadow: 1px 1px 2px 3px rgba(0, 101, 252, 0.5);
+    }
+}
+
+/* Label */
+.caixa-input-login label {
+    display: block;
+    width: 90%;
+    font-size: 20px;
+    color: #FFF;
+}
+
+/* Div exclusiva para botões e links */
+.caixa-btn-login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+/* Botão */
+.caixa-btn-login button {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 15px;
+    border: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 150px;
+    cursor: pointer;
+
+    &:hover {
+        background: rgb(0, 101, 252);
+        color: #FFF;
+    }
+}
