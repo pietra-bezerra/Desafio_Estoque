@@ -138,21 +138,21 @@ $user_name = $_SESSION['user_nome'];
                     <select name="produto" id="produto">
                         <!-- <option disabled selected>Selecione uma Opção</option> -->
                         <?php
-                            require "php/conectar.php";
-                            
-                            $coletando = "SELECT idgestao, nome FROM gestao";
-                            $executando = mysqli_query($conn,$coletando);
-                            if(mysqli_num_rows($executando) > 0){
-                                echo "<option disabled selected>Selecione uma Opção</option>";
-                                while($linha = mysqli_fetch_array($executando)){
-                                    // echo "<option value='".$linha['idgestao']."'>".$linha['nome']."</option>";
-                                    echo "<option value='".$linha['idgestao']."'>".$linha['nome']."</option>";
-                                }
-                            } else{
-                                echo "<option disbled select>Nenhum Produto Registrado</option>";
-                            }
+                        require "php/conectar.php";
 
-                            mysqli_close($conn);
+                        $coletando = "SELECT idgestao, nome FROM gestao";
+                        $executando = mysqli_query($conn, $coletando);
+                        if (mysqli_num_rows($executando) > 0) {
+                            echo "<option disabled selected>Selecione uma Opção</option>";
+                            while ($linha = mysqli_fetch_array($executando)) {
+                                // echo "<option value='".$linha['idgestao']."'>".$linha['nome']."</option>";
+                                echo "<option value='" . $linha['idgestao'] . "'>" . $linha['nome'] . "</option>";
+                            }
+                        } else {
+                            echo "<option disbled select>Nenhum Produto Registrado</option>";
+                        }
+
+                        mysqli_close($conn);
                         ?>
                     </select>
                 </div>
@@ -188,7 +188,7 @@ $user_name = $_SESSION['user_nome'];
             <button type="button" onclick="closeEdit()" class="modal-close"><i class="bi bi-x"></i></button>
 
             <h3 class="modal-titulo">Editar Produto</h3>
-                            
+
             <div class="modal-item" style="display: none;">
                 <label>ID Produto</label>
                 <input type="number" name="edit-id" id="edit-id" value="sem Valor">
@@ -217,7 +217,22 @@ $user_name = $_SESSION['user_nome'];
             <button class="botao-confirmar" type="submit"><i class="bi bi-save"></i>Salvar Alterações</button>
         </form>
     </section>
+    <script>
+        document.getElementById('pesquisa').addEventListener('input', function() {
+            const termo = this.value.toLowerCase();
+            const linhas = document.querySelectorAll('tbody tr');
 
+            linhas.forEach(linha => {
+                const textoLinha = linha.innerText.toLowerCase();
+
+                if (textoLinha.includes(termo)) {
+                    linha.style.display = '';
+                } else {
+                    linha.style.display = 'none';
+                }
+            });
+        });
+    </script>
     <script src="scripts/script.js" defer></script>
 </body>
 

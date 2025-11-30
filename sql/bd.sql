@@ -10,6 +10,20 @@ CREATE TABLE IF NOT EXISTS usuarios (
     permissao VARCHAR(100)
 );
 
+INSERT INTO usuarios(
+    nome,
+    email,
+    cpf,
+    senha,
+    permissao
+) VALUES(
+    'Matheus',
+    'matheus@admin.com',
+    '123.456.789-01',
+    '$2b$12$ZEdrFyLzc.prScThSUw9leyeRLeNUkQsuJxOC1BpjusJ74au5dg9m',
+    'ADMIN'
+);
+
 CREATE TABLE IF NOT EXISTS gestao(
     idgestao INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,

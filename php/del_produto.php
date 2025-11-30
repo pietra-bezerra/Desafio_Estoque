@@ -15,5 +15,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     $exclusao = "DELETE FROM gestao WHERE idgestao = $id_produto";
     mysqli_query($conn, $exclusao);
 
+    mysqli_close($conn);
     Header("Location: ../estoque.php");
 }

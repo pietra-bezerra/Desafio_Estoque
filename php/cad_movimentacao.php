@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $conferindo = "SELECT quantidade FROM gestao WHERE idgestao = $id_produto";
         $executando = mysqli_query($conn,$conferindo);
         $transformando = mysqli_fetch_array($executando);
-        if($transformando['quantidade'] <= 0){
+        if(($transformando['quantidade']-$quantidade) <= 0){
             $atualizando = "UPDATE gestao SET quantidade = 0 WHERE idgestao = $id_produto";
         }
     }

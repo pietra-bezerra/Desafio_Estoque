@@ -172,11 +172,11 @@ $user_name = $_SESSION['user_nome'];
         <form class="modal-form" action="php/editar_usuario.php" method="POST">
             <button type="button" onclick="closeEdit()" class="modal-close"><i class="bi bi-x"></i></button>
 
-            <h3 class="modal-titulo">Editar Usuário: <?php echo $_SESSION['user_nome'] ?></h3>
+            <h3 class="modal-titulo">Editar Usuário:</h3>
 
             <div class="modal-item" style="display: none;">
                 <label>ID Usuário</label>
-                <input type="number" name="edit-usuario-id" id="edit-usuario-id" value="sem Valor">
+                <input type="number" name="edit-id" id="edit-id" value="sem Valor">
             </div>
 
             <div class="modal-item">
@@ -195,10 +195,15 @@ $user_name = $_SESSION['user_nome'];
             </div>
 
             <div class="modal-item">
+                <label>Senha</label>
+                <input type="password" name="edit-senha" id="edit-senha">
+            </div>
+
+            <div class="modal-item">
                 <label>Permissão</label>
                 <!-- <input type="number" name="edit-minimo" id="edit-minimo"> -->
                 <select name="edit-permissao" id="edit-permissao">
-                    <option value="" disabled selected>Selecione uma Opção</option>
+                    <option disabled selected>Selecione uma Opção</option>
                     <option value="PADRAO">PADRÃO</option>
                     <option value="ADMIN">ADMIN</option>
                 </select>
@@ -207,6 +212,23 @@ $user_name = $_SESSION['user_nome'];
             <button class="botao-confirmar" type="submit"><i class="bi bi-save"></i>Salvar Alterações</button>
         </form>
     </section>
+
+    <script>
+        document.getElementById('pesquisa').addEventListener('input', function() {
+            const termo = this.value.toLowerCase();
+            const linhas = document.querySelectorAll('tbody tr');
+
+            linhas.forEach(linha => {
+                const textoLinha = linha.innerText.toLowerCase();
+
+                if (textoLinha.includes(termo)) {
+                    linha.style.display = '';
+                } else {
+                    linha.style.display = 'none';
+                }
+            });
+        });
+    </script>
 
     <script src="scripts/script.js" defer></script>
 </body>

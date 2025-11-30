@@ -1,14 +1,14 @@
 <?php
-    if($_SERVER['REQUEST_METHOD'] == 'POST'){
-        require "conectar.php";
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    require "conectar.php";
 
-        $nome = $_POST['nome'];
-        $descricao = $_POST['descricao'];
-        $unidade = $_POST['unidade'];
-        $quantidade = $_POST['quantidade'];
-        $minimo = $_POST['minimo'];
+    $nome = $_POST['nome'];
+    $descricao = $_POST['descricao'];
+    $unidade = $_POST['unidade'];
+    $quantidade = $_POST['quantidade'];
+    $minimo = $_POST['minimo'];
 
-        $inserindo = "INSERT INTO gestao(
+    $inserindo = "INSERT INTO gestao(
             nome,
             descricao,
             unidade,
@@ -22,9 +22,8 @@
             '$minimo'
         );";
 
-        mysqli_query($conn,$inserindo);
+    mysqli_query($conn, $inserindo);
 
-        header("Location: ../produto.php");
-    }
-
-?>
+    mysqli_close($conn);
+    header("Location: ../produto.php");
+}
