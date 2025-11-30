@@ -32,7 +32,7 @@ $user_name = $_SESSION['user_nome'];
 <body>
 
     <?php
-        include "php/componentes/nav.php";
+    include "php/componentes/nav.php";
     ?>
 
     <!-- Conteúdo -->
@@ -64,16 +64,36 @@ $user_name = $_SESSION['user_nome'];
                     <h4>Saída (Últimas 24h)</h4>
                     <i class="bi bi-arrow-down-right-circle"></i>
                 </div>
-                <h2 class="card-numero">2</h2>
+                <h2 class="card-numero"><?php 
+                    require "php/conectar.php";
+
+                    $coletandoEstoque = "SELECT idmovimentacao FROM movimentacao WHERE tipo = 'Saída' AND data_movimentacao >= NOW() - INTERVAL 1 DAY ";
+                    $executando = mysqli_query($conn,$coletandoEstoque);
+                    $numero = mysqli_num_rows($executando);
+
+                    echo $numero;
+
+                    mysqli_close($conn);
+                ?></h2>
                 <p>Movimentação recente</p>
             </div>
 
             <div class="dashboard-card card-minimo">
                 <div class="card-topo">
-                    <h4>Produtos no Mínimo</h4>
+                    <h4>Produtos no Mínimo ou Sem Estoque</h4>
                     <i class="bi bi-exclamation-triangle"></i>
                 </div>
-                <h2 class="card-numero">1</h2>
+                <h2 class="card-numero"><?php 
+                    require "php/conectar.php";
+
+                    $coletandoEstoque = "SELECT idgestao FROM gestao WHERE quantidade <= minimo";
+                    $executando = mysqli_query($conn,$coletandoEstoque);
+                    $numero = mysqli_num_rows($executando);
+
+                    echo $numero;
+
+                    mysqli_close($conn);
+                ?></h2>
                 <p>Exige atenção imediata</p>
             </div>
 
@@ -82,7 +102,17 @@ $user_name = $_SESSION['user_nome'];
                     <h4>Total em Estoque</h4>
                     <i class="bi bi-box"></i>
                 </div>
-                <h2 class="card-numero">4</h2>
+                <h2 class="card-numero"><?php 
+                    require "php/conectar.php";
+
+                    $coletandoEstoque = "SELECT idgestao FROM gestao";
+                    $executando = mysqli_query($conn,$coletandoEstoque);
+                    $numero = mysqli_num_rows($executando);
+
+                    echo $numero;
+
+                    mysqli_close($conn);
+                ?></h2>
                 <p>Itens em prateleira</p>
             </div>
 
@@ -97,13 +127,45 @@ $user_name = $_SESSION['user_nome'];
                     <thead>
                         <tr>
                             <th>Produto</th>
+                            <th>Status</th>
                             <th>Tipo</th>
                             <th>Quantidade</th>
                             <th>Data</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                        <?php
+                        require "php/conectar.php";
+
+                        $coletando = "SELECT * FROM movimentacao ORDER BY data_movimentacao DESC LIMIT 7";
+                        $executando = mysqli_query($conn, $coletando);
+
+                        if (mysqli_num_rows($executando) > 0) {
+                            while ($linha = mysqli_fetch_array($executando)) {
+                                echo "<tr>";
+                                echo "<td>" . $linha['nome'] . "</td>";
+                                if($linha['status_produto'] == "ATIVO"){
+                                    echo "<td class='ativo'>" . $linha['status_produto'] . "</td>";
+                                } else{
+                                    echo "<td class='deletado'>" . $linha['status_produto'] . "</td>";
+                                }
+                                echo "<td>" . $linha['tipo'] . "</td>";
+                                if($linha['tipo'] == "Entrada"){
+                                    echo "<td class='entrada'> +" . $linha['quantidade'] . "</td>";
+                                } else{
+                                    echo "<td class='saida'> -" . $linha['quantidade'] . "</td>";
+                                }
+                                echo "<td>" . date('d/m/Y H:i', strtotime($linha['data_movimentacao'])) . "</td>";
+                                echo "</tr>";
+                            }
+                        } else {
+                            echo "<tr><td colspan='6'>Nenhum Produto Registrado.</td></tr>";
+                        }
+
+                        mysqli_close($conn);
+
+                        ?>
+                        <!-- <tr>
                             <td>Teclado Mecânico X</td>
                             <td class="saida">Saída</td>
                             <td>-1</td>
@@ -114,7 +176,7 @@ $user_name = $_SESSION['user_nome'];
                             <td class="entrada">Entrada</td>
                             <td>+5</td>
                             <td>24/11/2025</td>
-                        </tr>
+                        </tr> -->
                     </tbody>
                 </table>
             </div>
@@ -122,4 +184,5 @@ $user_name = $_SESSION['user_nome'];
 
     </main>
 </body>
+
 </html>

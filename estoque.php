@@ -145,6 +145,7 @@ $user_name = $_SESSION['user_nome'];
                             if(mysqli_num_rows($executando) > 0){
                                 echo "<option disabled selected>Selecione uma Opção</option>";
                                 while($linha = mysqli_fetch_array($executando)){
+                                    // echo "<option value='".$linha['idgestao']."'>".$linha['nome']."</option>";
                                     echo "<option value='".$linha['idgestao']."'>".$linha['nome']."</option>";
                                 }
                             } else{

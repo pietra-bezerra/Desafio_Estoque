@@ -22,6 +22,7 @@ CREATE TABLE IF NOT EXISTS gestao(
 CREATE TABLE IF NOT EXISTS movimentacao(
     idmovimentacao INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
+    status_produto VARCHAR(20),
     tipo VARCHAR(8) NOT NULL,
     quantidade INT NOT NULL,
     data_movimentacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP

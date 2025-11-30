@@ -6,7 +6,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $tipo = $_POST['tipo'];
     $quantidade = $_POST['quantidade'];
 
-    $inserindo = "INSERT INTO movimentacao2( idgestao, tipo, quantidade)VALUES('$id_produto','$tipo','$quantidade')";
+    $nome = "SELECT nome FROM gestao WHERE idgestao = $id_produto";;
+    $executando = mysqli_query($conn,$nome);
+    $transformando = mysqli_fetch_array($executando);
+    $nome_coletado = $transformando['nome'];
+
+    $inserindo = "INSERT INTO movimentacao( nome, tipo, quantidade, status_produto)VALUES('$nome_coletado','$tipo','$quantidade', 'ATIVO')";
     mysqli_query($conn, $inserindo);
 
     if ($tipo == "Entrada") {
