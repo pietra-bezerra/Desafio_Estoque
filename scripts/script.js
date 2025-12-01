@@ -54,8 +54,8 @@ function validarMovimentacao() {
         var produto = document.getElementById('produto');
         var estoqueAtual = produto.selectedOptions[0].dataset.qntd;
         var quantidade = document.getElementById('quantidade');
-        if (estoqueAtual < quantidade.value ) {
-            document.getElementById('erro-msg').innerText =  "Não há estoque suficiente!";
+        if (estoqueAtual < quantidade.value) {
+            document.getElementById('erro-msg').innerText = "Não há estoque suficiente!";
             quantidade.focus();
             return false; // nao deixo enviar se a quantidade for maior que o estoque atual
         }
@@ -64,16 +64,43 @@ function validarMovimentacao() {
 }
 
 // valido se o usuario nao selecionou nenhuma unidade de medida
-function validarCadastroProduto(){
+function validarCadastroProduto() {
     var unidade = document.getElementById("unidade").value
 
-    if(unidade == "sem Valor"){
+    if (unidade == "sem Valor") {
         document.getElementById("erro-msg-unidade").innerText = "Por-favor selecione uma unidade de medida!";
         return false;
-    }else {
+    } else {
         erroMsg.innerText = ""; // limpa mensagem de erro
     }
 
     return true; // formulário ok
 
 }
+
+const regex = /^\d{3}\.?\d{3}\.?\d{3}-?\d{2}$/;
+
+function validarEditCPF() {
+    var cpf = document.getElementById('edit-cpf').value;
+    if (regex.test(cpf)) {
+        document.getElementById('erro-msg-edit-cpf').innerText = '';
+    } else {
+        document.getElementById('erro-msg-edit-cpf').innerText = 'CPF inválido!';
+        return false;
+    }
+
+    return true;
+}
+
+function validarCPF() {
+    var cpf = document.getElementById('cpf').value;
+    if (regex.test(cpf)) {
+        document.getElementById('erro-msg-cpf').innerText = '';
+    } else {
+        document.getElementById('erro-msg-cpf').innerText = 'CPF inválido!';
+        return false;
+    }
+
+    return true;
+}
+

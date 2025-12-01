@@ -42,7 +42,8 @@ $user_name = $_SESSION['user_nome'];
 
 <body>
 
-    <?php include 'php/componentes/nav.php'; # incluo a navbar ?>
+    <?php include 'php/componentes/nav.php'; # incluo a navbar 
+    ?>
 
     <main class="conteudo-principal">
 
@@ -126,7 +127,7 @@ $user_name = $_SESSION['user_nome'];
 
     <!-- MODAL DE cadastro -->
     <section class="modal-fundo" id="modalMovimentacao">
-        <form class="modal-form" action="php/cad_usuario.php" method="POST">
+        <form class="modal-form" action="php/cad_usuario.php" method="POST" onsubmit="return validarCPF()">
             <button type="button" onclick="closeMovimentacao()" class="modal-close"><i class="bi bi-x"></i></button>
 
             <h3 class="modal-titulo">Adicionar Usuário</h3>
@@ -150,6 +151,7 @@ $user_name = $_SESSION['user_nome'];
                 <div class="modal-item">
                     <label>CPF</label>
                     <input type="text" name="cpf" id="cpf" placeholder="123.456.789-10">
+                    <p id="erro-msg-cpf" style="color: red;"></p>
                 </div>
             </div>
 
@@ -169,7 +171,7 @@ $user_name = $_SESSION['user_nome'];
 
     <!-- MODAL EDIT -->
     <section class="modal-fundo" id="modalEdicao">
-        <form class="modal-form" action="php/editar_usuario.php" method="POST">
+        <form class="modal-form" action="php/editar_usuario.php" method="POST" onsubmit="return validarEditCPF()">
             <button type="button" onclick="closeEdit()" class="modal-close"><i class="bi bi-x"></i></button>
 
             <h3 class="modal-titulo">Editar Usuário:</h3>
@@ -192,6 +194,7 @@ $user_name = $_SESSION['user_nome'];
             <div class="modal-item">
                 <label>CPF</label>
                 <input type="text" name="edit-cpf" id="edit-cpf">
+                <p id="erro-msg-edit-cpf" style="color:red;"></p>
             </div>
 
             <div class="modal-item">
