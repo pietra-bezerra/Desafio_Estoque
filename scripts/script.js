@@ -38,10 +38,27 @@ function pesquisar() {
 
     for (let i = 0; i < linhas.length; i++) {
         var txtNaLinha = linhas[i].innerText.toLowerCase();
-        if(txtNaLinha.includes(termo)){
+        if (txtNaLinha.includes(termo)) {
             linhas[i].style.display = '';
-        } else{
+        } else {
             linhas[i].style.display = 'none';
         }
+    }
+}
+
+function validarMovimentacao() {
+    var operacao = document.getElementById('tipo').value;
+    if (operacao == "Entrada") {
+        return true;
+    } else {
+        var produto = document.getElementById('produto');
+        var estoqueAtual = produto.selectedOptions[0].dataset.qntd;
+        var quantidade = document.getElementById('quantidade');
+        if (estoqueAtual < quantidade.value ) {
+            document.getElementById('erro-msg').innerText =  "Não há estoque suficiente!";
+            quantidade.focus();
+            return false; // bloqueia envio
+        }
+        return true; // quantidade ok
     }
 }

@@ -131,11 +131,10 @@ $user_name = $_SESSION['user_nome'];
 
     <!-- MODAL DE MOVIMENTAÇÃO -->
     <section class="modal-fundo" id="modalMovimentacao">
-        <form class="modal-form" action="php/cad_movimentacao.php" method="POST">
+        <form class="modal-form" action="php/cad_movimentacao.php" method="POST" onsubmit="return validarMovimentacao()">
             <button type="button" onclick="closeMovimentacao()" class="modal-close"><i class="bi bi-x"></i></button>
 
             <h3 class="modal-titulo">Registrar Movimentação</h3>
-
             <div class="modal-linha">
                 <div class="modal-item">
                     <label>Produto</label>
@@ -145,23 +144,23 @@ $user_name = $_SESSION['user_nome'];
                         <?php
                         require "php/conectar.php";
                         # conecto no banco
-
-                        $coletando = "SELECT idgestao, nome FROM gestao";
+                        
+                        $coletando = "SELECT idgestao, nome, quantidade FROM gestao";
                         $executando = mysqli_query($conn, $coletando);
-                        # coleto o id e nome dos produtos cadastrados
-
+                        # coleto o id, nome e quantidade dos produtos cadastrados
+                        
                         # se o numero de linhas for maior q 0 ou seja exista algum produto cadastrado execute... 
                         if (mysqli_num_rows($executando) > 0) {
                             echo "<option disabled selected>Selecione uma Opção</option>";
                             while ($linha = mysqli_fetch_array($executando)) {
                                 // echo "<option value='".$linha['idgestao']."'>".$linha['nome']."</option>";
-                                echo "<option value='" . $linha['idgestao'] . "'>" . $linha['nome'] . "</option>";
+                                echo "<option value='" . $linha['idgestao'] . "'data-qntd='".$linha['quantidade']."'>" . $linha['nome'] . "</option>";
                             }
                             # caso contrario informe que não temos produtos registrados
                         } else {
                             echo "<option disbled select>Nenhum Produto Registrado</option>";
                         }
-
+                        
                         mysqli_close($conn);
                         # fecho a conexão
                         ?>
@@ -176,7 +175,7 @@ $user_name = $_SESSION['user_nome'];
                     </select>
                 </div>
             </div>
-
+            
             <div class="modal-linha">
                 <div class="modal-item">
                     <label>Quantidade</label>
@@ -187,7 +186,8 @@ $user_name = $_SESSION['user_nome'];
                     <input type="date">
                 </div>
             </div>
-
+            
+            <p id="erro-msg" style="color: red;"></p>
             <button class="botao-confirmar"><i class="bi bi-box-arrow-in-right"></i>Cadastrar Movimentação</button>
 
         </form>
