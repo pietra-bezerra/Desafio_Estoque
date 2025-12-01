@@ -1,15 +1,13 @@
 <?php
-// 1. Inicia a sessão (necessário para checar a autenticação)
+# inicio a sessão
 session_start();
 
-// 2. Verifica se o usuário está logado
+# caso o usuario não estiver logado mando ele para tela de login
 if (!isset($_SESSION['user_id'])) {
-    // Se não estiver logado, redireciona para a tela de login
     header("Location: index.php");
     exit;
 }
 
-// Obtém o nome do usuário da sessão para exibição
 $user_name = $_SESSION['user_nome'];
 ?>
 
@@ -36,14 +34,14 @@ $user_name = $_SESSION['user_nome'];
 
 <body>
 
-    <?php include 'php/componentes/nav.php'; ?>
+    <?php include 'php/componentes/nav.php'; # incluo na página a navbar ?>
 
     <main class="conteudo-principal">
 
         <section class="sec-config">
             <div class="caixa-pesquisa">
                 <label for="pesquisa" class="icone-pesquisa"><i class="bi bi-search"></i></label>
-                <input type="text" name="pesquisa" id="pesquisa" placeholder="Buscar Produto...">
+                <input type="text" name="pesquisa" id="pesquisa" placeholder="Buscar Produto..." oninput="pesquisar()">
             </div>
             <img src="assets/imgs/logo.png" class="logo-sec">
         </section>
@@ -72,10 +70,13 @@ $user_name = $_SESSION['user_nome'];
                 <tbody>
                     <?php
                     require "php/conectar.php";
+                    # inicio conexao
 
                     $coletando = "SELECT * FROM gestao";
                     $executando = mysqli_query($conn, $coletando);
+                    # coleto todos os produtos
 
+                    # se tiver algum registro execute...
                     if (mysqli_num_rows($executando) > 0) {
                         while ($linha = mysqli_fetch_array($executando)) {
                             echo "<tr>";
@@ -83,23 +84,27 @@ $user_name = $_SESSION['user_nome'];
                             echo "<td>" . $linha['nome'] . "</td>";
                             echo "<td>" . $linha['descricao'] . "</td>";
                             echo "<td>" . $linha['unidade'] . "</td>";
+                            # se a quantidade for 0, exibo uma celula com a classe alerta baixo, um title (aparece quando você deixa o cursor encima) e o texto com cor vermelha informando que estamos sem estoque
                             if ($linha['quantidade'] == 0) {
                                 echo "<td class='alerta-baixo' title='⚠ Sem Estoque' style='color: red;'> SEM ESTOQUE </td>";
+                                # caso a quantidade seja menor ou igual ao minimo a celula exibida terá classe alerta-baixo com um title informando que estamos com estoque baixo
                             } else if ($linha['quantidade'] <= $linha['minimo']) {
                                 echo "<td class='alerta-baixo' title='⚠ Alerta Estoque Baixo'>" . $linha['quantidade'] . "</td>";
                             } else {
+                                # aqui exibo a quantidade normalmente, já que não estamos com estoque baixo ou sem estoque
                                 echo "<td>" . $linha['quantidade'] . "</td>";
                             }
                             echo "<td>" . $linha['minimo'] . "</td>";
-                            include "php/componentes/btn-acoes.php";
+                            include "php/componentes/btn-acoes.php"; # inclui os botões de ação para os produto
                             echo "</tr>";
                         }
+                        # caso contrario exiba uma linha com uma celula que ocupe 7 colunas informando que nenhum produto foi registrado 
                     } else {
                         echo "<tr><td colspan='7'>Nenhum Produto Registrado.</td></tr>";
                     }
 
                     mysqli_close($conn);
-
+                    # fecho a conexao
                     ?>
 
                     <!-- Exemplo de linha — mesma ideia para os outros -->
@@ -139,20 +144,26 @@ $user_name = $_SESSION['user_nome'];
                         <!-- <option disabled selected>Selecione uma Opção</option> -->
                         <?php
                         require "php/conectar.php";
+                        # conecto no banco
 
                         $coletando = "SELECT idgestao, nome FROM gestao";
                         $executando = mysqli_query($conn, $coletando);
+                        # coleto o id e nome dos produtos cadastrados
+
+                        # se o numero de linhas for maior q 0 ou seja exista algum produto cadastrado execute... 
                         if (mysqli_num_rows($executando) > 0) {
                             echo "<option disabled selected>Selecione uma Opção</option>";
                             while ($linha = mysqli_fetch_array($executando)) {
                                 // echo "<option value='".$linha['idgestao']."'>".$linha['nome']."</option>";
                                 echo "<option value='" . $linha['idgestao'] . "'>" . $linha['nome'] . "</option>";
                             }
+                            # caso contrario informe que não temos produtos registrados
                         } else {
                             echo "<option disbled select>Nenhum Produto Registrado</option>";
                         }
 
                         mysqli_close($conn);
+                        # fecho a conexão
                         ?>
                     </select>
                 </div>
@@ -217,22 +228,6 @@ $user_name = $_SESSION['user_nome'];
             <button class="botao-confirmar" type="submit"><i class="bi bi-save"></i>Salvar Alterações</button>
         </form>
     </section>
-    <script>
-        document.getElementById('pesquisa').addEventListener('input', function() {
-            const termo = this.value.toLowerCase();
-            const linhas = document.querySelectorAll('tbody tr');
-
-            linhas.forEach(linha => {
-                const textoLinha = linha.innerText.toLowerCase();
-
-                if (textoLinha.includes(termo)) {
-                    linha.style.display = '';
-                } else {
-                    linha.style.display = 'none';
-                }
-            });
-        });
-    </script>
     <script src="scripts/script.js" defer></script>
 </body>
 

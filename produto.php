@@ -1,9 +1,14 @@
 <?php
 session_start();
+#inicio sessao
+
+# verifico se o usuario está logado se não estiver mando para o login
 if (!isset($_SESSION['user_id'])) {
     header("Location: index.php");
     exit;
 }
+
+# salvo o valor da variavel de sessao com o nome do usuario em uma variavel comum
 $user_name = $_SESSION['user_nome'];
 ?>
 <!DOCTYPE html>
@@ -24,8 +29,9 @@ $user_name = $_SESSION['user_nome'];
 </head>
 
 <body>
-    <?php include 'php/componentes/nav.php'; ?>
-
+    <?php include 'php/componentes/nav.php';
+    # incluo na página a navbar ?>
+    
     <main class="main-container">
 
         <section class="sec-config">
@@ -42,7 +48,6 @@ $user_name = $_SESSION['user_nome'];
 
             <form method="POST" action="php/cad_produto.php" class="form-produto">
 
-                <!-- COLUNA ESQUERDA -->
                 <div class="coluna-esquerda">
 
                     <h3 class="box-titulo">Detalhes do Produto</h3>
@@ -72,7 +77,6 @@ $user_name = $_SESSION['user_nome'];
                     </div>
                 </div>
 
-                <!-- COLUNA DIREITA -->
                 <div class="coluna-direita">
 
                     <header>

@@ -1,20 +1,20 @@
 <?php
-// 1. Inicia a sessão (necessário para checar a autenticação)
+# inicio a sessão
 session_start();
 
-// 2. Verifica se o usuário está logado
+# verifico se não está logado, caso realmente não esteja mando de volta pro login.php
 if (!isset($_SESSION['user_id'])) {
-    // Se não estiver logado, redireciona para a tela de login
     header("Location: index.php");
     exit;
 }
 
+# caso o usuario não tiver permissão nível ADMIN e tente acessar essa página mando ele para a dashboard no caso principal.php
 if ($_SESSION['user_permissao'] != "ADMIN") {
     header("Location: principal.php");
     exit;
 }
 
-// Obtém o nome do usuário da sessão para exibição
+# coleto o nome do usuario
 $user_name = $_SESSION['user_nome'];
 ?>
 
@@ -42,14 +42,14 @@ $user_name = $_SESSION['user_nome'];
 
 <body>
 
-    <?php include 'php/componentes/nav.php'; ?>
+    <?php include 'php/componentes/nav.php'; # incluo a navbar ?>
 
     <main class="conteudo-principal">
 
         <section class="sec-config">
             <div class="caixa-pesquisa">
                 <label for="pesquisa" class="icone-pesquisa"><i class="bi bi-search"></i></label>
-                <input type="text" name="pesquisa" id="pesquisa" placeholder="Buscar Usuário...">
+                <input type="text" name="pesquisa" id="pesquisa" placeholder="Buscar Usuário..." oninput="pesquisar()">
             </div>
             <img src="assets/imgs/logo.png" class="logo-sec">
         </section>
@@ -78,10 +78,11 @@ $user_name = $_SESSION['user_nome'];
                 <tbody>
                     <?php
                     require "php/conectar.php";
+                    # conecto no banco de dados
 
+                    # exibo as informações cadastradas de todos os funcionarios se tiver algum registro
                     $coletando = "SELECT * FROM usuarios";
                     $executando = mysqli_query($conn, $coletando);
-
                     if (mysqli_num_rows($executando) > 0) {
                         while ($linha = mysqli_fetch_array($executando)) {
                             echo "<tr>";
@@ -91,18 +92,17 @@ $user_name = $_SESSION['user_nome'];
                             echo "<td>" . $linha['cpf'] . "</td>";
                             echo "<td> ****** </td>";
                             echo "<td>" . $linha['permissao'] . "</td>";
-                            include "php/componentes/btn-acoes-users.php";
+                            include "php/componentes/btn-acoes-users.php"; # inclui os botoes de ações (editar e excluir usuários)
                             echo "</tr>";
                         }
                     } else {
-                        echo "<tr><td colspan='7'>Nenhum Produto Registrado.</td></tr>";
+                        echo "<tr><td colspan='7'>Nenhum Usuário Registrado.</td></tr>";
                     }
 
                     mysqli_close($conn);
-
+                    # fechei a conexao
                     ?>
 
-                    <!-- Exemplo de linha — mesma ideia para os outros -->
                     <!-- <tr>
                         <td>1</td>
                         <td>Cimento</td>
@@ -196,7 +196,7 @@ $user_name = $_SESSION['user_nome'];
 
             <div class="modal-item">
                 <label>Senha</label>
-                <input type="password" name="edit-senha" id="edit-senha">
+                <input type="password" name="edit-senha" id="edit-senha" minlength="6">
             </div>
 
             <div class="modal-item">
@@ -212,23 +212,6 @@ $user_name = $_SESSION['user_nome'];
             <button class="botao-confirmar" type="submit"><i class="bi bi-save"></i>Salvar Alterações</button>
         </form>
     </section>
-
-    <script>
-        document.getElementById('pesquisa').addEventListener('input', function() {
-            const termo = this.value.toLowerCase();
-            const linhas = document.querySelectorAll('tbody tr');
-
-            linhas.forEach(linha => {
-                const textoLinha = linha.innerText.toLowerCase();
-
-                if (textoLinha.includes(termo)) {
-                    linha.style.display = '';
-                } else {
-                    linha.style.display = 'none';
-                }
-            });
-        });
-    </script>
 
     <script src="scripts/script.js" defer></script>
 </body>

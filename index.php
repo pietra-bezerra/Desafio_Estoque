@@ -34,67 +34,62 @@
 
                 $email = $_POST['email'];
                 $senha = $_POST['senha'];
+                // coleto o email e senha inserido pelo usuario
 
                 // Usamos Prepared Statements (s: string) para segurança
+                # ele separa a query dos valores inseridos pelo usuario
                 $stmt = $conn->prepare("SELECT * FROM usuarios WHERE email = ?");
+                // o ? é um placeholder ou seja ali vai entrar alguma informação
 
                 $stmt->bind_param("s", $email);
+                # bind_param diz ao php que o valor que vai entrar no lugar do ?
+                # no caso é 's' (string) e o valor será o e-mail coletado anteriormente
                 $stmt->execute();
+                # executo a query
                 $result = $stmt->get_result();
+                # armazeno o resultado
 
                 if ($result->num_rows === 1) {
-                    // Usuário encontrado
+                    # se o usuario for encontrado execute...
+
                     $usuario = $result->fetch_assoc();
+                    # transforma o resultado em array associativo
                     $senha_hash_bd = $usuario['senha'];
+                    # pega a senha que tava no banco no caso o hash
 
-                    // C. Verifica se a senha digitada corresponde ao hash seguro no banco
                     if (password_verify($senha, $senha_hash_bd)) {
+                        # verifico se a senha digitada bate com a senha armazenada no banco
 
-                        // Login BEM-SUCEDIDO! 🎉
-
-                        // Recomenda-se iniciar uma sessão AQUI para manter o usuário logado
+                        # inicio a sessão
                         session_start();
+                        # armazeno alguns valores coletados do banco em variaveis de sessão
                         $_SESSION['user_id'] = $usuario['id'];
                         $_SESSION['user_nome'] = $usuario['nome'];
                         $_SESSION['user_permissao'] = $usuario['permissao'];
 
-                        // Redireciona para a área restrita do sistema
+                        # envio o usuario para principal.php (tela inicial = dashboard)
                         header("Location: principal.php");
                         exit;
+                        # finalizo a execucao com script por aq
                     } else {
                         // Senha incorreta
                         $erro = "Senha Incorreta!";
-                        echo '<div style="
-                background:#EF4444;
-                color:#FFF;
-                padding:12px;
-                border-radius:8px;
-                width:80%;
-                max-width:750px;
-                margin:10px auto;
-                text-align:center;
-                font-weight:bold;
-                ">' . "<p>$erro</p>" . "</div>";
+                        echo '<div style="background:#EF4444; color:#FFF; padding:12px; border-radius:8px;
+                                width:80%; max-width:750px; margin:10px auto; text-align:center; 
+                                font-weight:bold;">' . "<p>$erro</p>" . "</div>";
                     }
                 } else {
                     // Usuário não encontrado
                     $erro = "Usuário não Encontrado!";
-                    echo '<div style="
-                background:#EF4444;
-                color:#FFF;
-                padding:12px;
-                border-radius:8px;
-                width:80%;
-                max-width:750px;
-                margin:10px auto;
-                text-align:center;
-                font-weight:bold;
-                ">' . "<p>$erro</p>" . "</div>";
+                    echo '<div style="background:#EF4444; color:#FFF; padding:12px; border-radius:8px;
+                                width:80%; max-width:750px; margin:10px auto; text-align:center; 
+                                font-weight:bold;">' . "<p>$erro</p>" . "</div>";
                 }
 
                 $stmt->close();
-
+                # fecho o prepared statement
                 $conn->close();
+                # fecho a conexao com o banco
             }
 
             ?>
