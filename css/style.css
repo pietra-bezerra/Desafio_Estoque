@@ -1,0 +1,153 @@
+/* Praticamente virou o Body mas tem um motivo espécifico */
+.caixa-main-login {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #111827;
+    overflow-x: hidden;
+}
+
+/* Caixa de Login */
+.caixa-form-login {
+    width: 50%;
+    max-width: 750px;
+    min-width: 450px;
+    padding-bottom: 20px;
+    height: 600px;
+    background: rgba(31, 41, 55, 0.8);
+    border-radius: 40px;
+    box-shadow: 1px 1px 3px 5px rgba(129, 140, 248, 0.25);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: animacaocaixa 5s infinite linear;
+}
+
+@keyframes animacaocaixa {
+    0% {
+        box-shadow: 1px 1px 2px 3px rgba(129, 140, 248, 0.25);
+    }
+
+    25% {
+        box-shadow: 1px 1px 2px 3px rgba(129, 140, 248, 0.45);
+    }
+
+    50% {
+        box-shadow: 1px 1px 2px 3px rgba(129, 140, 248, 0.75);
+    }
+
+    75% {
+        box-shadow: 1px 1px 2px 3px rgba(129, 140, 248, 0.30);
+    }
+
+    100% {
+        box-shadow: 1px 1px 2px 3px rgba(129, 140, 248, 0.45);
+    }
+}
+
+/* Logo da Empresa */
+.caixa-form-login img {
+    width: 240px;
+}
+
+/* Essa aqui é auxiliar para caixa-input */
+.caixa-div-login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    gap: 21px;
+}
+
+/* Div feita exclusivamente para os inputs */
+.caixa-input-login {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+/* Input */
+.caixa-input-login input {
+    width: 90%;
+    max-width: 742px;
+    max-height: 80px;
+    padding: 20px;
+    border-radius: 15px;
+    border: 2px solid transparent;
+    animation: animacaoinput 5s infinite linear;
+    background: #1F2937;
+    color: #fff;
+
+    &:focus {
+        box-shadow: 1px 1px 2px 3px #818cf8;
+        border: 2px solid #2563EB;
+    }
+}
+
+@keyframes animacaoinput {
+    0% {
+        border-color: #818cf8;
+        box-shadow: 1px 1px 2px 3px #818cf8;
+    }
+
+    25% {
+        border-color: #4F46E5;
+        box-shadow: 1px 1px 2px 3px rgba(129, 140, 248, 0.5);
+    }
+
+    50% {
+        border-color: #6366F1;
+        box-shadow: 1px 1px 2px 3px rgba(129, 140, 248, 0.8);
+    }
+
+    75% {
+        border-color: #4F46E5;
+        box-shadow: 1px 1px 2px 3px rgba(129, 140, 248, 0.3);
+    }
+
+    100% {
+        border-color: #818cf8;
+        box-shadow: 1px 1px 2px 3px rgba(129, 140, 248, 0.5);
+    }
+}
+
+/* Label */
+.caixa-input-login label {
+    display: block;
+    width: 90%;
+    font-size: 20px;
+    color: #E5E7EB;
+}
+
+/* Botão */
+.caixa-btn-login button {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 15px;
+    border: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 150px;
+    cursor: pointer;
+    background: #FFF;
+    color: #000;
+
+    &:hover {
+        background: #818cf8;
+        color: #FFF;
+    }
+}
+
+@media (max-width: 768px) {
+    .caixa-form-login{
+        scale: 0.75;
+    }
+}

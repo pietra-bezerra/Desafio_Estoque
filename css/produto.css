@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&display=swap');
+
+body {
+    background-color: #111827;
+    color: #E5E7EB;
+    font-family: 'Geologica', sans-serif;
+    display: flex;
+}
+
+.main-container {
+    padding: 40px;
+    width: 85%;
+}
+
+.sec-config {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+.titulo-pagina {
+    font-size: 32px;
+    font-weight: bold;
+    color: #7C91F5;
+}
+
+.logo-pagina {
+    width: 100px;
+}
+.logo-pagina:hover {
+    transform: scale(1.05);
+    opacity: 1;
+}
+
+.header-desc {
+    margin-bottom: 25px;
+}
+
+.subtitulo {
+    font-size: 22px;
+    font-weight: 600;
+    color: #D1D5DB;
+    margin-bottom: 5px;
+}
+
+.legenda {
+    color: #9CA3AF;
+    font-size: 14px;
+    font-style: italic;
+}
+
+.form-section {
+    background: #1F2937;
+    border: 1px solid #374151;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,.4);
+}
+
+.form-produto {
+    display: flex;
+    flex-direction: row;
+    gap: 35px;
+}
+
+/* ESQUERDA */
+.coluna-esquerda {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.box-titulo {
+    font-size: 20px;
+    color: #9FAAF1;
+    font-weight: 600;
+    border-bottom: 1px solid #374151;
+    padding-bottom: 6px;
+}
+
+.caixa-input-prod {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.caixa-input-prod label {
+    font-size: 13px;
+    color: #B7BCC7;
+}
+
+.caixa-input-prod input, .caixa-input-prod select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    background: #303843;
+    border: 1px solid #4B5563;
+    color: #FFF;
+    transition: 0.2s;
+    &:focus{
+        border-color: #6366F1;
+        box-shadow: 0 0 7px #6366F170;
+        outline: none;
+    }
+}
+
+
+/* LINHA DUPLA */
+.linha-dupla {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+/* DIREITA */
+.coluna-direita {
+    width: 260px;
+    background: #2A323C;
+    border: 1px solid #4B5563;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.parametro-titulo {
+    font-size: 18px;
+    font-weight: bold;
+    color: #FFF;
+}
+
+.btn-cadastro {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    font-size: 17px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    background: #4F46E5;
+    transition: .2s;
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+    &:hover{
+        background: #4338CA;
+        transform: scale(1.04);
+    }
+}
+
+@media (max-width: 768px) {
+    body{
+        margin-left: 10%;
+    }
+    .logo-pagina{
+        display: none;
+    }
+    .form-produto{
+        flex-direction: column;
+    }
+    .coluna-direita{
+        flex: 1;
+        width: auto;
+    }
+
+    .main-container{
+        width: 100%;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    body{
+        margin-left: 25%;
+    }
+
+    .main-container{
+        width: 100%;
+    }
+}
