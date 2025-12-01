@@ -7,12 +7,14 @@ function closeMovimentacao() {
 }
 
 function showEdit(id) {
-    // Em uma aplicação real, você preencheria os campos do modal com os dados do produto clicado.
+    // exibo a modal de edicao
     document.getElementById('modalEdicao').style.display = 'flex';
+    // o parametro id passa a ser o valor do campo edit-id em alguns formularios
     document.getElementById('edit-id').value = id;
 }
 
 function closeEdit() {
+    // fecho a modal
     document.getElementById('modalEdicao').style.display = 'none';
 }
 

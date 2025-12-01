@@ -215,3 +215,14 @@ body {
         width: 100%;
     }
 }
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    body{
+        margin-left: 25%;
+    }
+
+    .main-conteudo{
+        width: 100%;
+    }
+}
+

@@ -274,3 +274,13 @@ td .caixa-acoes {
         left: 85%;
     }
 }
+
+@media (min-width: 769px) and (max-width: 1024px){
+    body{
+        margin-left: 25%;
+    }
+
+    .conteudo-principal{
+        width: 100%;
+    }
+}
