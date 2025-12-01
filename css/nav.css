@@ -86,3 +86,27 @@
 .btn-sair:hover {
     background: #B91C1C;
 }
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 5%;
+        align-items: center;
+        position: fixed;
+    }
+
+    .sidebar-header {
+        visibility: hidden;
+    }
+
+    .sidebar-links {
+        font-size: 0px;
+    }
+
+    .btn-sair {
+        font-size: 0px;
+    }
+
+    .btn-sair i{
+        font-size: 14px;
+    }
+}

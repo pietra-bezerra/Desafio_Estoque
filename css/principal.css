@@ -6,11 +6,12 @@ body {
     color: #E5E7EB;
     display: flex;
     min-height: 100vh;
+    height: auto;
 }
 
 /* CONTEÚDO */
 .main-conteudo {
-    flex: 1;
+    width: 85%;
     padding: 40px;
 }
 
@@ -193,4 +194,24 @@ body {
 
 .deletado{
     color: #DC2626;
+}
+
+@media (max-width: 768px) {
+    .sec-config-avatar{
+        display: none;
+    }
+    .sec-caixas{
+        flex-wrap: wrap;
+    } 
+    .dashboard-card{
+        width: 70%;
+    }
+
+    body{
+        margin-left: 10%;
+    }
+
+    .main-conteudo{
+        width: 100%;
+    }
 }

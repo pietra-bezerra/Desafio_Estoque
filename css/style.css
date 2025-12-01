@@ -137,11 +137,17 @@
     align-items: center;
     width: 150px;
     cursor: pointer;
-    background: #2563EB;
-    color: #fff;
+    background: #FFF;
+    color: #000;
 
     &:hover {
-        background: #1e40af;
+        background: #818cf8;
         color: #FFF;
+    }
+}
+
+@media (max-width: 768px) {
+    .caixa-form-login{
+        scale: 0.75;
     }
 }

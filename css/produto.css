@@ -8,7 +8,6 @@ body {
 }
 
 .main-container {
-    flex: 1;
     padding: 40px;
     width: 85%;
 }
@@ -151,5 +150,25 @@ body {
     &:hover{
         background: #4338CA;
         transform: scale(1.04);
+    }
+}
+
+@media (max-width: 768px) {
+    body{
+        margin-left: 10%;
+    }
+    .logo-pagina{
+        display: none;
+    }
+    .form-produto{
+        flex-direction: column;
+    }
+    .coluna-direita{
+        flex: 1;
+        width: auto;
+    }
+
+    .main-container{
+        width: 100%;
     }
 }
