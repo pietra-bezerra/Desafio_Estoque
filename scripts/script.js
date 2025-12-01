@@ -31,7 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
 // faço um for para percorrer todas as linhas
 // deixo os textos presentes na minha em caixa baixa
 // se o texto da linha possuir oque foi digitado na barra, ela fica visivel já as outras ficam invisiveis
-
 function pesquisar() {
     var termo = document.getElementById('pesquisa').value.toLowerCase();
     var linhas = document.querySelectorAll('tbody tr');
@@ -46,6 +45,7 @@ function pesquisar() {
     }
 }
 
+// valido se a movimentacao saida se a quantidade q tenho no estoque nao for o suficiente para realizar a saida eu n permito e alerto o usuario
 function validarMovimentacao() {
     var operacao = document.getElementById('tipo').value;
     if (operacao == "Entrada") {
@@ -63,10 +63,11 @@ function validarMovimentacao() {
     }
 }
 
+// valido se o usuario nao selecionou nenhuma unidade de medida
 function validarCadastroProduto(){
     var unidade = document.getElementById("unidade").value
 
-    if(unidade != "UNIDADE" && unidade != "QUILOGRAMA" && unidade != "METRO" && unidade != "MILILITRO" && unidade != "CENTIMETRO" && unidade != "CAIXA" && unidade != "PACOTE"){
+    if(unidade == "sem Valor"){
         document.getElementById("erro-msg-unidade").innerText = "Por-favor selecione uma unidade de medida!";
         return false;
     }else {
