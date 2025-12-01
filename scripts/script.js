@@ -49,7 +49,7 @@ function pesquisar() {
 function validarMovimentacao() {
     var operacao = document.getElementById('tipo').value;
     if (operacao == "Entrada") {
-        return true;
+        return true; // entrada sempre aceitamos
     } else {
         var produto = document.getElementById('produto');
         var estoqueAtual = produto.selectedOptions[0].dataset.qntd;
@@ -57,8 +57,22 @@ function validarMovimentacao() {
         if (estoqueAtual < quantidade.value ) {
             document.getElementById('erro-msg').innerText =  "Não há estoque suficiente!";
             quantidade.focus();
-            return false; // bloqueia envio
+            return false; // nao deixo enviar se a quantidade for maior que o estoque atual
         }
-        return true; // quantidade ok
+        return true; // envio se a quantidade for ok
     }
+}
+
+function validarCadastroProduto(){
+    var unidade = document.getElementById("unidade").value
+
+    if(unidade != "UNIDADE" && unidade != "QUILOGRAMA" && unidade != "METRO" && unidade != "MILILITRO" && unidade != "CENTIMETRO" && unidade != "CAIXA" && unidade != "PACOTE"){
+        document.getElementById("erro-msg-unidade").innerText = "Por-favor selecione uma unidade de medida!";
+        return false;
+    }else {
+        erroMsg.innerText = ""; // limpa mensagem de erro
+    }
+
+    return true; // formulário ok
+
 }

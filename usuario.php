@@ -124,7 +124,7 @@ $user_name = $_SESSION['user_nome'];
 
     </main>
 
-    <!-- MODAL DE MOVIMENTAÇÃO -->
+    <!-- MODAL DE cadastro -->
     <section class="modal-fundo" id="modalMovimentacao">
         <form class="modal-form" action="php/cad_usuario.php" method="POST">
             <button type="button" onclick="closeMovimentacao()" class="modal-close"><i class="bi bi-x"></i></button>

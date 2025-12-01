@@ -46,7 +46,7 @@ $user_name = $_SESSION['user_nome'];
 
         <section class="form-section">
 
-            <form method="POST" action="php/cad_produto.php" class="form-produto">
+            <form method="POST" action="php/cad_produto.php" class="form-produto" onsubmit="return validarCadastroProduto()">
 
                 <div class="coluna-esquerda">
 
@@ -66,7 +66,18 @@ $user_name = $_SESSION['user_nome'];
 
                         <div class="caixa-input-prod">
                             <label>Unidade de Medida</label>
-                            <input type="text" name="unidade" placeholder="UN, KG, METRO" required>
+                            <!-- <input type="text" name="unidade" placeholder="UN, KG, METRO" required> -->
+                            <select name="unidade" id="unidade">
+                                <option value="sem Valor" disabled selected>Selecione uma Opção</option>
+                                <option value="UNIDADE">UN</option>
+                                <option value="QUILOGRAMA">KG</option>
+                                <option value="METRO">M</option>
+                                <option value="MILILITRO">ML</option>
+                                <option value="CENTIMETRO">CM</option>
+                                <option value="CAIXA">CAIXA</option>
+                                <option value="PACOTE">PACOTE</option>
+                            </select>
+                            <p id="erro-msg-unidade" style="color: red;"></p>
                         </div>
 
                         <div class="caixa-input-prod">
@@ -88,7 +99,7 @@ $user_name = $_SESSION['user_nome'];
                         <label>Estoque Mínimo</label>
                         <input type="number" name="minimo" min="0" placeholder="50" required>
                     </div>
-
+                    
                     <button type="submit" class="btn-cadastro">
                         <i class="bi bi-plus-circle-fill"></i> Cadastrar Produto
                     </button>
@@ -98,5 +109,6 @@ $user_name = $_SESSION['user_nome'];
         </section>
     </main>
 
+    <script src="scripts/script.js" defer></script>
 </body>
 </html>

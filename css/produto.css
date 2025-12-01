@@ -91,7 +91,7 @@ body {
     color: #B7BCC7;
 }
 
-.caixa-input-prod input {
+.caixa-input-prod input, .caixa-input-prod select {
     width: 100%;
     padding: 10px;
     border-radius: 8px;
