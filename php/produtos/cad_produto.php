@@ -1,6 +1,6 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    require "conectar.php";
+    require '../conectar.php';
     # conecto no banco
 
     $nome = $_POST['nome'];
@@ -29,6 +29,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     mysqli_query($conn, $inserindo);
     #executo
     mysqli_close($conn);
-    header("Location: ../produto.php");
+    header("Location: ../../produto.php");
     #fecho conexao e volto para produto.php
 }

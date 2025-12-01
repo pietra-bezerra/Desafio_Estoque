@@ -82,8 +82,8 @@ $user_name = $_SESSION['user_nome'];
                         while ($linha = mysqli_fetch_array($executando)) {
                             echo "<tr>";
                             echo "<td>" . $linha['idgestao'] . "</td>";
-                            echo "<td>" . $linha['nome'] . "</td>";
-                            echo "<td>" . $linha['descricao'] . "</td>";
+                            echo "<td>" . htmlspecialchars($linha['nome']) . "</td>";
+                            echo "<td>" . htmlspecialchars($linha['descricao']) . "</td>";
                             echo "<td>" . $linha['unidade'] . "</td>";
                             # se a quantidade for 0, exibo uma celula com a classe alerta baixo, um title (aparece quando você deixa o cursor encima) e o texto com cor vermelha informando que estamos sem estoque
                             if ($linha['quantidade'] == 0) {
@@ -132,7 +132,7 @@ $user_name = $_SESSION['user_nome'];
 
     <!-- MODAL DE MOVIMENTAÇÃO -->
     <section class="modal-fundo" id="modalMovimentacao">
-        <form class="modal-form" action="php/cad_movimentacao.php" method="POST" onsubmit="return validarMovimentacao()">
+        <form class="modal-form" action="php/produtos/cad_movimentacao.php" method="POST" onsubmit="return validarMovimentacao()">
             <button type="button" onclick="closeMovimentacao()" class="modal-close"><i class="bi bi-x"></i></button>
 
             <h3 class="modal-titulo">Registrar Movimentação</h3>
@@ -155,7 +155,7 @@ $user_name = $_SESSION['user_nome'];
                             echo "<option disabled selected>Selecione uma Opção</option>";
                             while ($linha = mysqli_fetch_array($executando)) {
                                 // echo "<option value='".$linha['idgestao']."'>".$linha['nome']."</option>";
-                                echo "<option value='" . $linha['idgestao'] . "'data-qntd='" . $linha['quantidade'] . "'>" . $linha['nome'] . "</option>";
+                                echo "<option value='" . $linha['idgestao'] . "'data-qntd='" . $linha['quantidade'] . "'>" . htmlspecialchars($linha['nome']) . "</option>";
                             }
                             # caso contrario informe que não temos produtos registrados
                         } else {
@@ -196,7 +196,7 @@ $user_name = $_SESSION['user_nome'];
 
     <!-- MODAL EDIT -->
     <section class="modal-fundo" id="modalEdicao">
-        <form class="modal-form" action="php/editar_produto.php" method="POST">
+        <form class="modal-form" action="php/produtos/editar_produto.php" method="POST">
             <button type="button" onclick="closeEdit()" class="modal-close"><i class="bi bi-x"></i></button>
 
             <h3 class="modal-titulo">Editar Produto</h3>

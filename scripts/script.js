@@ -81,14 +81,24 @@ const regex = /^\d{3}\.?\d{3}\.?\d{3}-?\d{2}$/; //aceita tanto 222333444-55 quan
 
 function validarEditCPF() {
     var cpf = document.getElementById('edit-cpf').value;
+
+    // Remove espaços em branco antes de testar
+    cpf = cpf.trim();
+
+    // Lógica: Se estiver vazio, limpa msg de erro e deixa passar
+    if (cpf === "") {
+        document.getElementById('erro-msg-edit-cpf').innerText = '';
+        return true;
+    }
+
+    // Se chegou aqui, é porque TEM texto, então aplica a Regex
     if (regex.test(cpf)) {
         document.getElementById('erro-msg-edit-cpf').innerText = '';
+        return true;
     } else {
         document.getElementById('erro-msg-edit-cpf').innerText = 'CPF inválido!';
         return false;
     }
-
-    return true;
 }
 
 function validarCPF() {

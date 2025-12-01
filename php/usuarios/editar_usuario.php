@@ -1,6 +1,6 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    require 'conectar.php';
+    require '../conectar.php';
     # conecto no banco de dados
     $id_usuario = $_POST['edit-id'];
     $nome = $_POST['edit-nome'];
@@ -39,6 +39,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     mysqli_query($conn, $sql);
     # atualizo os dados do usuario com id coletado
     mysqli_close($conn);
-    header("Location: ../usuario.php");
+    header("Location: ../../usuario.php");
     # fecho conexao e volto para usuario.php
 }

@@ -88,9 +88,9 @@ $user_name = $_SESSION['user_nome'];
                         while ($linha = mysqli_fetch_array($executando)) {
                             echo "<tr>";
                             echo "<td>" . $linha['id'] . "</td>";
-                            echo "<td>" . $linha['nome'] . "</td>";
-                            echo "<td>" . $linha['email'] . "</td>";
-                            echo "<td>" . $linha['cpf'] . "</td>";
+                            echo "<td>" . htmlspecialchars($linha['nome']) . "</td>";
+                            echo "<td>" . htmlspecialchars($linha['email']) . "</td>";
+                            echo "<td>" . htmlspecialchars($linha['cpf']) . "</td>";
                             echo "<td> ****** </td>";
                             echo "<td>" . $linha['permissao'] . "</td>";
                             include "php/componentes/btn-acoes-users.php"; # inclui os botoes de ações (editar e excluir usuários)
@@ -127,7 +127,7 @@ $user_name = $_SESSION['user_nome'];
 
     <!-- MODAL DE cadastro -->
     <section class="modal-fundo" id="modalMovimentacao">
-        <form class="modal-form" action="php/cad_usuario.php" method="POST" onsubmit="return validarCPF()">
+        <form class="modal-form" action="php/usuarios/cad_usuario.php" method="POST" onsubmit="return validarCPF()">
             <button type="button" onclick="closeMovimentacao()" class="modal-close"><i class="bi bi-x"></i></button>
 
             <h3 class="modal-titulo">Adicionar Usuário</h3>
@@ -171,7 +171,7 @@ $user_name = $_SESSION['user_nome'];
 
     <!-- MODAL EDIT -->
     <section class="modal-fundo" id="modalEdicao">
-        <form class="modal-form" action="php/editar_usuario.php" method="POST" onsubmit="return validarEditCPF()">
+        <form class="modal-form" action="php/usuarios/editar_usuario.php" method="POST" onsubmit="return validarEditCPF()">
             <button type="button" onclick="closeEdit()" class="modal-close"><i class="bi bi-x"></i></button>
 
             <h3 class="modal-titulo">Editar Usuário:</h3>

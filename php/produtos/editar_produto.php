@@ -1,6 +1,6 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    require 'conectar.php';
+    require '../conectar.php';
     # Puxo o conectar.php que armazena a conexao com o banco
 
     $id_produto = $_POST['edit-id'];
@@ -34,6 +34,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     # Aqui realizo um update para atualizar o registro com o id coletado
 
     mysqli_close($conn);
-    header("Location: ../estoque.php");
+    header("Location: ../../estoque.php");
     # Fecho a conexao com o banco e mando de volta pro estoque
 }

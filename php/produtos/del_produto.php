@@ -1,7 +1,7 @@
 <?php
 # se a requisicao for get execute:
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
-    require "conectar.php";
+    require '../conectar.php';
     #conecto no banco
 
     $id_produto = $_GET['id_produto'];
@@ -22,6 +22,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     # aqui exclui o produto que tinha o id coletado anteriormente
 
     mysqli_close($conn);
-    Header("Location: ../estoque.php");
+    Header("Location: ../../estoque.php");
     # fecho conexao e volto para estoque.php
 }

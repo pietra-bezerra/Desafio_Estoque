@@ -53,7 +53,7 @@ $user_name = $_SESSION['user_nome'];
                 </div>
                 <div>
                     <!-- uma mensagem personalizada com o nome do usuario logado, htmlspecialchars() é uma forma de exibir uma informação com segurança, evitando xss -->
-                    <p class="sec-config-nome">Olá, <?php echo $user_name; ?>!</p>
+                    <p class="sec-config-nome">Olá, <?php echo htmlspecialchars($user_name); ?>!</p>
                     <small>Bem-vindo(a) ao seu painel de controle.</small>
                 </div>
             </div>
@@ -163,7 +163,7 @@ $user_name = $_SESSION['user_nome'];
                         if (mysqli_num_rows($executando) > 0) {
                             while ($linha = mysqli_fetch_array($executando)) {
                                 echo "<tr>";
-                                echo "<td>" . $linha['nome'] . "</td>";
+                                echo "<td>" . htmlspecialchars($linha['nome']) . "</td>";
                                 if($linha['status_produto'] == "ATIVO"){
                                     # quando o status do pedido for ativo a celula ganha classe ativa
                                     echo "<td class='ativo'>" . $linha['status_produto'] . "</td>";

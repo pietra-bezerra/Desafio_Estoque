@@ -1,6 +1,6 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    require 'conectar.php';
+    require '../conectar.php';
     # conecto no banco
     $nome = $_POST['nome'];
     $email = $_POST['email'];
@@ -29,6 +29,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     # adiciono os dados na tabela usuarios 
 
     mysqli_close($conn);
-    Header('Location: ../usuario.php');
+    Header('Location: ../../usuario.php');
     #fecho conexao e volto para usuario.php
 }

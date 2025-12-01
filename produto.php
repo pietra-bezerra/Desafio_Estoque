@@ -46,7 +46,7 @@ $user_name = $_SESSION['user_nome'];
 
         <section class="form-section">
 
-            <form method="POST" action="php/cad_produto.php" class="form-produto" onsubmit="return validarCadastroProduto()">
+            <form method="POST" action="php/produtos/cad_produto.php" class="form-produto" onsubmit="return validarCadastroProduto()">
 
                 <div class="coluna-esquerda">
 
