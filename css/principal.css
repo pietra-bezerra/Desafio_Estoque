@@ -42,6 +42,12 @@ body {
     align-items: center;
     font-size: 22px;
     font-weight: bold;
+
+    &:hover{
+        border-radius: 10px;
+        background: #F9F9F9;
+        color: #4F46E5;
+    }
 }
 
 .sec-config-logo {
