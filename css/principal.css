@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&display=swap');
+
+body {
+    font-family: "Geologica", sans-serif;
+    background: #111827;
+    color: #E5E7EB;
+    display: flex;
+    min-height: 100vh;
+    height: auto;
+}
+
+/* CONTEÚDO */
+.main-conteudo {
+    width: 85%;
+    padding: 40px;
+}
+
+/* TOPO */
+.sec-config {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #374151;
+    margin-bottom: 40px;
+}
+
+.sec-config-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.sec-config-avatar {
+    width: 48px;
+    height: 48px;
+    background: #4F46E5;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.sec-config-logo {
+    width: 100px;
+}
+
+.sec-config-nome {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+/* TÍTULO */
+.sec-titulo h2 {
+    font-size: 32px;
+    font-weight: 800;
+    color: #818CF8;
+    margin-bottom: 20px;
+}
+
+/* CARDS */
+.sec-caixas {
+    display: flex;
+    justify-content: space-around;
+    gap: 25px;
+}
+
+.dashboard-card {
+    width: 30%;
+    padding: 25px;
+    background: #1F2937;
+    border-radius: 14px;
+    transition: 0.2s;
+    border-top: 4px solid transparent;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+.dashboard-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+}
+
+.card-topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-topo i {
+    font-size: 26px;
+}
+
+.card-numero {
+    font-size: 34px;
+    margin: 15px 0;
+    font-weight: 700;
+}
+
+.card-saida {
+    border-top-color: #EF4444;
+}
+
+.card-saida h4 {
+    color: #F87171;
+}
+
+.card-saida i {
+    color: #EF4444;
+}
+
+.card-minimo {
+    border-top-color: #FACC15;
+}
+
+.card-minimo h4 {
+    color: #FCD34D;
+}
+
+.card-minimo i {
+    color: #FACC15;
+}
+
+.card-total {
+    border-top-color: #22C55E;
+}
+
+.card-total h4 {
+    color: #86EFAC;
+}
+
+.card-total i {
+    color: #22C55E;
+}
+
+/* TABELA */
+.sec-tabela {
+    margin-top: 40px;
+    padding: 25px;
+    background: #1F2937;
+    border-radius: 14px;
+    border: 1px solid #374151;
+}
+
+.sec-tabela h3 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: #A5B4FC;
+}
+
+.tabela-wrapper {
+    overflow-x: auto;
+}
+
+.tabela {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.tabela thead {
+    background: #374151;
+}
+
+.tabela thead th {
+    padding: 12px;
+    color: #9CA3AF;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+.tabela tbody td {
+    padding: 12px;
+    border-bottom: 1px solid #1F2937;
+}
+
+.tabela tr:hover {
+    background: #374151;
+}
+
+.entrada {
+    color: #10B981;
+}
+
+.saida {
+    color: #EF4444;
+}
+
+.ativo {
+    color: #818CF8;
+}
+
+.deletado{
+    color: #DC2626;
+}
+
+@media (max-width: 768px) {
+    .sec-config-avatar{
+        display: none;
+    }
+    .sec-caixas{
+        flex-wrap: wrap;
+    } 
+    .dashboard-card{
+        width: 70%;
+    }
+
+    body{
+        margin-left: 10%;
+    }
+
+    .main-conteudo{
+        width: 100%;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    body{
+        margin-left: 25%;
+    }
+
+    .main-conteudo{
+        width: 100%;
+    }
+}
+
+.modalzinha-fundo{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,0.5);
+}
+
+.modal{
+    width: 350px;
+    height: 150px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background: #1F2937;
+    border: 1px solid #374151;
+}
+
+.modal button{
+    padding: 5px 30px;
+    background: #818CF8;
+    border: 2px solid #4F46E5;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    color: #E5E7EB;
+
+    &:hover{
+        border-color: #818CF8;
+        background: #4F46E5;
+    }
+}
