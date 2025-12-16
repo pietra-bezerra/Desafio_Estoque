@@ -1,153 +1,153 @@
-/* Praticamente virou o Body mas tem um motivo espécifico */
+/* Praticamente virou o Body mas tem um motivo específico */
 .caixa-main-login {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #111827;
-    overflow-x: hidden;
+    width: 100vw;                  /* Largura igual a 100% da viewport */
+    height: 100vh;                 /* Altura igual a 100% da viewport */
+    display: flex;                 /* Ativa Flexbox */
+    align-items: center;           /* Centraliza verticalmente */
+    justify-content: center;       /* Centraliza horizontalmente */
+    background: #111827;           /* Cor de fundo azul escuro */
+    overflow-x: hidden;            /* Oculta overflow horizontal */
 }
 
 /* Caixa de Login */
 .caixa-form-login {
-    width: 50%;
-    max-width: 750px;
-    min-width: 450px;
-    padding-bottom: 20px;
-    height: 600px;
-    background: rgba(31, 41, 55, 0.8);
-    border-radius: 40px;
-    box-shadow: 1px 1px 3px 5px rgba(129, 140, 248, 0.25);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    animation: animacaocaixa 5s infinite linear;
+    width: 50%;                    /* Largura de 50% do container pai */
+    max-width: 750px;              /* Largura máxima de 750px */
+    min-width: 450px;              /* Largura mínima de 450px */
+    padding-bottom: 20px;          /* Padding apenas na parte inferior */
+    height: 600px;                 /* Altura fixa de 600px */
+    background: rgba(31, 41, 55, 0.8); /* Fundo semi-transparente */
+    border-radius: 40px;           /* Bordas arredondadas de 40px */
+    box-shadow: 1px 1px 3px 5px rgba(129, 140, 248, 0.25); /* Sombra roxa clara */
+    display: flex;                 /* Ativa Flexbox */
+    flex-direction: column;        /* Organiza itens em coluna */
+    align-items: center;           /* Centraliza horizontalmente */
+    justify-content: center;       /* Centraliza verticalmente */
+    animation: animacaocaixa 5s infinite linear; /* Aplica animação contínua */
 }
 
 @keyframes animacaocaixa {
     0% {
-        box-shadow: 1px 1px 2px 3px rgba(129, 140, 248, 0.25);
+        box-shadow: 1px 1px 2px 3px rgba(129, 140, 248, 0.25); /* Sombra inicial */
     }
 
     25% {
-        box-shadow: 1px 1px 2px 3px rgba(129, 140, 248, 0.45);
+        box-shadow: 1px 1px 2px 3px rgba(129, 140, 248, 0.45); /* Sombra mais forte */
     }
 
     50% {
-        box-shadow: 1px 1px 2px 3px rgba(129, 140, 248, 0.75);
+        box-shadow: 1px 1px 2px 3px rgba(129, 140, 248, 0.75); /* Sombra mais forte ainda */
     }
 
     75% {
-        box-shadow: 1px 1px 2px 3px rgba(129, 140, 248, 0.30);
+        box-shadow: 1px 1px 2px 3px rgba(129, 140, 248, 0.30); /* Sombra mais fraca */
     }
 
     100% {
-        box-shadow: 1px 1px 2px 3px rgba(129, 140, 248, 0.45);
+        box-shadow: 1px 1px 2px 3px rgba(129, 140, 248, 0.45); /* Retorna ao estado intermediário */
     }
 }
 
 /* Logo da Empresa */
 .caixa-form-login img {
-    width: 240px;
+    width: 240px;                  /* Largura fixa da imagem */
 }
 
 /* Essa aqui é auxiliar para caixa-input */
 .caixa-div-login {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 90%;
-    gap: 21px;
+    display: flex;                 /* Ativa Flexbox */
+    flex-direction: column;        /* Organiza em coluna */
+    justify-content: center;       /* Centraliza verticalmente */
+    align-items: center;           /* Centraliza horizontalmente */
+    width: 90%;                    /* Largura de 90% do container pai */
+    gap: 21px;                     /* Espaço de 21px entre itens filhos */
 }
 
 /* Div feita exclusivamente para os inputs */
 .caixa-input-login {
-    width: 90%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    margin: 0 auto;
+    width: 90%;                    /* Largura de 90% do container pai */
+    display: flex;                 /* Ativa Flexbox */
+    align-items: center;           /* Centraliza verticalmente */
+    justify-content: center;       /* Centraliza horizontalmente */
+    flex-direction: column;        /* Organiza em coluna */
+    margin: 0 auto;                /* Centraliza horizontalmente */
 }
 
 /* Input */
 .caixa-input-login input {
-    width: 90%;
-    max-width: 742px;
-    max-height: 80px;
-    padding: 20px;
-    border-radius: 15px;
-    border: 2px solid transparent;
-    animation: animacaoinput 5s infinite linear;
-    background: #1F2937;
-    color: #fff;
+    width: 90%;                    /* Largura de 90% do container pai */
+    max-width: 742px;              /* Largura máxima de 742px */
+    max-height: 80px;              /* Altura máxima de 80px */
+    padding: 20px;                 /* Espaçamento interno de 20px */
+    border-radius: 15px;           /* Bordas arredondadas de 15px */
+    border: 2px solid transparent; /* Borda transparente inicial */
+    animation: animacaoinput 5s infinite linear; /* Aplica animação */
+    background: #1F2937;           /* Cor de fundo escura */
+    color: #fff;                   /* Texto branco */
 
-    &:focus {
-        box-shadow: 1px 1px 2px 3px #818cf8;
-        border: 2px solid #2563EB;
+    &:focus {                      /* Quando o input está em foco */
+        box-shadow: 1px 1px 2px 3px #818cf8; /* Sombra roxa */
+        border: 2px solid #2563EB; /* Borda azul */
     }
 }
 
 @keyframes animacaoinput {
     0% {
-        border-color: #818cf8;
-        box-shadow: 1px 1px 2px 3px #818cf8;
+        border-color: #818cf8;     /* Borda roxa clara */
+        box-shadow: 1px 1px 2px 3px #818cf8; /* Sombra roxa */
     }
 
     25% {
-        border-color: #4F46E5;
-        box-shadow: 1px 1px 2px 3px rgba(129, 140, 248, 0.5);
+        border-color: #4F46E5;     /* Borda roxa mais escura */
+        box-shadow: 1px 1px 2px 3px rgba(129, 140, 248, 0.5); /* Sombra com 50% opacidade */
     }
 
     50% {
-        border-color: #6366F1;
-        box-shadow: 1px 1px 2px 3px rgba(129, 140, 248, 0.8);
+        border-color: #6366F1;     /* Borda roxa intermediária */
+        box-shadow: 1px 1px 2px 3px rgba(129, 140, 248, 0.8); /* Sombra com 80% opacidade */
     }
 
     75% {
-        border-color: #4F46E5;
-        box-shadow: 1px 1px 2px 3px rgba(129, 140, 248, 0.3);
+        border-color: #4F46E5;     /* Borda roxa mais escura */
+        box-shadow: 1px 1px 2px 3px rgba(129, 140, 248, 0.3); /* Sombra com 30% opacidade */
     }
 
     100% {
-        border-color: #818cf8;
-        box-shadow: 1px 1px 2px 3px rgba(129, 140, 248, 0.5);
+        border-color: #818cf8;     /* Retorna à borda roxa clara */
+        box-shadow: 1px 1px 2px 3px rgba(129, 140, 248, 0.5); /* Sombra com 50% opacidade */
     }
 }
 
 /* Label */
 .caixa-input-login label {
-    display: block;
-    width: 90%;
-    font-size: 20px;
-    color: #E5E7EB;
+    display: block;                /* Faz o label ocupar toda a linha */
+    width: 90%;                    /* Largura de 90% do container pai */
+    font-size: 20px;               /* Tamanho da fonte 20px */
+    color: #E5E7EB;                /* Cor cinza claro para o texto */
 }
 
 /* Botão */
 .caixa-btn-login button {
-    margin-top: 20px;
-    padding: 10px;
-    border-radius: 15px;
-    border: none;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 150px;
-    cursor: pointer;
-    background: #FFF;
-    color: #000;
+    margin-top: 20px;              /* Margem superior de 20px */
+    padding: 10px;                 /* Espaçamento interno de 10px */
+    border-radius: 15px;           /* Bordas arredondadas de 15px */
+    border: none;                  /* Remove borda padrão */
+    display: flex;                 /* Ativa Flexbox */
+    justify-content: space-around; /* Espaça itens igualmente */
+    align-items: center;           /* Centraliza verticalmente */
+    width: 150px;                  /* Largura fixa de 150px */
+    cursor: pointer;               /* Cursor de ponteiro ao passar o mouse */
+    background: #FFF;              /* Fundo branco */
+    color: #000;                   /* Texto preto */
 
-    &:hover {
-        background: #818cf8;
-        color: #FFF;
+    &:hover {                      /* Quando o mouse passa sobre o botão */
+        background: #818cf8;       /* Fundo roxo */
+        color: #FFF;               /* Texto branco */
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px) {        /* Para telas com até 768px de largura */
     .caixa-form-login{
-        scale: 0.75;
+        scale: 0.75;               /* Reduz escala para 75% do tamanho original */
     }
 }
