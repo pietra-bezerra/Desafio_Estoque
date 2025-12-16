@@ -1,119 +1,119 @@
 /* SIDEBAR */
 .sidebar {
-    width: 260px;
-    background: #1F2937;
-    padding: 20px;
-    border-right: 1px solid #374151;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    width: 260px;                  /* Largura fixa da sidebar */
+    background: #1F2937;           /* Cor de fundo azul escuro */
+    padding: 20px;                 /* Espaçamento interno de 20px */
+    border-right: 1px solid #374151; /* Borda direita cinza escuro */
+    height: 100vh;                 /* Altura igual a 100% da viewport */
+    display: flex;                 /* Ativa Flexbox */
+    flex-direction: column;        /* Organiza itens em coluna */
+    justify-content: space-between; /* Espaça itens igualmente com espaço entre eles */
 }
 
 .sidebar-header {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 30px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #374151;
+    display: flex;                 /* Ativa Flexbox */
+    align-items: center;           /* Centraliza verticalmente */
+    gap: 12px;                     /* Espaço de 12px entre itens filhos */
+    margin-bottom: 30px;           /* Margem inferior de 30px */
+    padding-bottom: 20px;          /* Padding inferior de 20px */
+    border-bottom: 1px solid #374151; /* Borda inferior cinza escuro */
 }
 
 .sidebar-header img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
+    width: 40px;                   /* Largura da imagem 40px */
+    height: 40px;                  /* Altura da imagem 40px */
+    border-radius: 50%;            /* Transforma imagem em círculo */
 }
 
 .sidebar-header h1 {
-    color: #818CF8;
-    font-weight: 800px;
-    font-size: 20px;
+    color: #818CF8;                /* Cor roxa para o texto */
+    font-weight: 800px;            /* Peso da fonte 800 (errado - deveria ser sem "px") */
+    font-size: 20px;               /* Tamanho da fonte 20px */
 }
 
 .sidebar-links {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+    display: flex;                 /* Ativa Flexbox */
+    flex-direction: column;        /* Organiza itens em coluna */
+    gap: 10px;                     /* Espaço de 10px entre links */
 }
 
 .sidebar-links a {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 12px;
-    border-radius: 8px;
-    color: #D1D5DB;
-    text-decoration: none;
-    font-weight: 500;
-    transition: 0.2s;
+    display: flex;                 /* Ativa Flexbox */
+    align-items: center;           /* Centraliza verticalmente */
+    gap: 10px;                     /* Espaço de 10px entre ícone e texto */
+    padding: 12px;                 /* Espaçamento interno de 12px */
+    border-radius: 8px;            /* Bordas arredondadas de 8px */
+    color: #D1D5DB;                /* Cor cinza claro para texto */
+    text-decoration: none;         /* Remove sublinhado padrão */
+    font-weight: 500;              /* Peso da fonte 500 */
+    transition: 0.2s;              /* Transição suave de 0.2s */
 }
 
 .sidebar-links a i {
-    font-size: 18px;
+    font-size: 18px;               /* Tamanho do ícone 18px */
 }
 
-.sidebar-links a:hover {
-    background: #374151;
+.sidebar-links a:hover {           /* Quando o mouse passa sobre o link */
+    background: #374151;           /* Fundo cinza escuro */
 }
 
-.sidebar-links a.ativo {
-    background: #374151;
-    color: #818CF8;
-    font-weight: 600;
+.sidebar-links a.ativo {           /* Para links com classe "ativo" */
+    background: #374151;           /* Fundo cinza escuro */
+    color: #818CF8;                /* Texto roxo */
+    font-weight: 600;              /* Peso da fonte 600 */
 }
 
 .sidebar-footer {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    width: 100%;
+    display: flex;                 /* Ativa Flexbox */
+    justify-content: center;       /* Centraliza horizontalmente */
+    align-items: flex-end;         /* Alinha itens ao final (parte inferior) */
+    width: 100%;                   /* Largura total do container */
 }
 
 .btn-sair {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    padding: 12px;
-    background: #DC2626;
-    color: white;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: 0.2s;
+    display: flex;                 /* Ativa Flexbox */
+    justify-content: center;       /* Centraliza horizontalmente */
+    gap: 10px;                     /* Espaço de 10px entre ícone e texto */
+    padding: 12px;                 /* Espaçamento interno de 12px */
+    background: #DC2626;           /* Fundo vermelho */
+    color: white;                  /* Texto branco */
+    border-radius: 8px;            /* Bordas arredondadas de 8px */
+    text-decoration: none;         /* Remove sublinhado */
+    font-weight: 500;              /* Peso da fonte 500 */
+    transition: 0.2s;              /* Transição suave de 0.2s */
 }
 
-.btn-sair:hover {
-    background: #B91C1C;
+.btn-sair:hover {                  /* Quando o mouse passa sobre o botão */
+    background: #B91C1C;           /* Fundo vermelho mais escuro */
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px) {        /* Para telas com até 768px de largura */
     .sidebar {
-        width: 5%;
-        align-items: center;
-        position: fixed;
+        width: 5%;                 /* Reduz largura para 5% */
+        align-items: center;       /* Centraliza itens horizontalmente */
+        position: fixed;           /* Fixa a sidebar na tela */
     }
 
     .sidebar-header {
-        visibility: hidden;
+        visibility: hidden;        /* Oculta o cabeçalho da sidebar */
     }
 
     .sidebar-links {
-        font-size: 0px;
+        font-size: 0px;            /* Define tamanho da fonte como 0 (oculta texto) */
     }
 
     .btn-sair {
-        font-size: 0px;
+        font-size: 0px;            /* Define tamanho da fonte como 0 (oculta texto) */
     }
 
-    .btn-sair i{
-        font-size: 14px;
+    .btn-sair i{                   /* Ícone dentro do botão sair */
+        font-size: 14px;           /* Tamanho do ícone 14px */
     }
 }
 
 
-@media (min-width: 769px) and (max-width: 1024px){
+@media (min-width: 769px) and (max-width: 1024px){ /* Para telas entre 769px e 1024px */
     .sidebar{
-        position: fixed;
+        position: fixed;           /* Fixa a sidebar na tela */
     }
 }
