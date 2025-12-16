@@ -1,68 +1,68 @@
-@import url('https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&display=swap'); /* Importa fonte do Google */
 
 body {
-    font-family: 'Geologica', sans-serif;
-    background: #111827;
-    color: #E5E7EB;
-    display: flex;
-    min-height: 100vh;
-    max-height: 100vh;
+    font-family: 'Geologica', sans-serif; /* Define fonte padrão */
+    background: #111827;           /* Cor de fundo azul escuro */
+    color: #E5E7EB;                /* Cor do texto cinza claro */
+    display: flex;                 /* Ativa Flexbox */
+    min-height: 100vh;             /* Altura mínima de 100% da viewport */
+    max-height: 100vh;             /* Altura máxima de 100% da viewport */
 }
 
 .conteudo-principal {
-    padding: 40px;
-    width: 85%;
+    padding: 40px;                 /* Espaçamento interno de 40px */
+    width: 85%;                    /* Largura de 85% do container pai */
 }
 
 /* CONFIG */
 .sec-config {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 35px;
-    border-bottom: 1px solid #374151;
-    padding-bottom: 20px;
+    display: flex;                 /* Ativa Flexbox */
+    justify-content: space-between; /* Espaça itens com espaço entre eles */
+    align-items: center;           /* Centraliza verticalmente */
+    margin-bottom: 35px;           /* Margem inferior de 35px */
+    border-bottom: 1px solid #374151; /* Borda inferior cinza escuro */
+    padding-bottom: 20px;          /* Padding inferior de 20px */
 }
 
 .caixa-pesquisa {
-    display: flex;
-    align-items: center;
-    background: #1F2937;
-    border: 1px solid #374151;
-    padding: 10px;
-    border-radius: 8px;
-    width: 350px;
+    display: flex;                 /* Ativa Flexbox */
+    align-items: center;           /* Centraliza verticalmente */
+    background: #1F2937;           /* Cor de fundo azul escuro */
+    border: 1px solid #374151;     /* Borda cinza escuro */
+    padding: 10px;                 /* Espaçamento interno de 10px */
+    border-radius: 8px;            /* Bordas arredondadas de 8px */
+    width: 350px;                  /* Largura fixa de 350px */
 }
 
 .caixa-pesquisa input {
-    background: transparent;
-    border: none;
-    color: #fff;
-    width: 100%;
-    margin-left: 8px;
+    background: transparent;       /* Fundo transparente */
+    border: none;                  /* Remove borda padrão */
+    color: #fff;                   /* Texto branco */
+    width: 100%;                   /* Largura total do container */
+    margin-left: 8px;              /* Margem à esquerda de 8px */
 }
 
 .icone-pesquisa i {
-    font-size: 18px;
-    color: #9CA3AF;
+    font-size: 18px;               /* Tamanho do ícone 18px */
+    color: #9CA3AF;                /* Cor cinza para o ícone */
 }
 
 .logo-sec {
-    width: 100px;
+    width: 100px;                  /* Largura fixa de 100px */
 }
 
 /* HEADER */
 .cabecalho {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 25px;
+    display: flex;                 /* Ativa Flexbox */
+    justify-content: space-between; /* Espaça itens com espaço entre eles */
+    align-items: center;           /* Centraliza verticalmente */
+    margin-bottom: 25px;           /* Margem inferior de 25px */
 }
 
 .titulo-principal {
-    font-size: 28px;
-    font-weight: 700;
-    color: #818cf8;
+    font-size: 28px;               /* Tamanho da fonte 28px */
+    font-weight: 700;              /* Peso da fonte 700 */
+    color: #818cf8;                /* Cor roxa */
 }
 
 /* BOTÕES */
@@ -70,221 +70,221 @@ body {
 .botao-editar,
 .botao-remover,
 .botao-confirmar {
-    border: none;
-    cursor: pointer;
-    border-radius: 6px;
-    font-weight: 600;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 10px 14px;
+    border: none;                  /* Remove borda padrão */
+    cursor: pointer;               /* Cursor de ponteiro */
+    border-radius: 6px;            /* Bordas arredondadas de 6px */
+    font-weight: 600;              /* Peso da fonte 600 */
+    display: inline-flex;          /* Display flex inline */
+    align-items: center;           /* Centraliza verticalmente */
+    gap: 6px;                      /* Espaço de 6px entre ícone e texto */
+    padding: 10px 14px;            /* Espaçamento interno vertical 10px, horizontal 14px */
 }
 
 .botao-add {
-    background: #4F46E5;
-    color: #fff;
+    background: #4F46E5;           /* Fundo roxo */
+    color: #fff;                   /* Texto branco */
 
-    &:hover {
-        background: #4338ca;
+    &:hover {                      /* Quando o mouse passa sobre o botão */
+        background: #4338ca;       /* Fundo roxo mais escuro */
     }
 }
 
 
 .botao-editar {
-    background: #2563EB;
-    color: white;
+    background: #2563EB;           /* Fundo azul */
+    color: white;                  /* Texto branco */
 
-    &:hover {
-        background: #1e40af;
+    &:hover {                      /* Quando o mouse passa sobre o botão */
+        background: #1e40af;       /* Fundo azul mais escuro */
     }
 }
 
 .botao-remover {
-    background: #DC2626;
-    color: white;
+    background: #DC2626;           /* Fundo vermelho */
+    color: white;                  /* Texto branco */
 
-    &:hover {
-        background: #B91C1C;
+    &:hover {                      /* Quando o mouse passa sobre o botão */
+        background: #B91C1C;       /* Fundo vermelho mais escuro */
     }
 }
 
 
 .botao-confirmar {
-    background: #059669;
-    color: white;
-    margin-top: 10px;
-    width: 100%;
+    background: #059669;           /* Fundo verde */
+    color: white;                  /* Texto branco */
+    margin-top: 10px;              /* Margem superior de 10px */
+    width: 100%;                   /* Largura total do container */
 
-    &:hover {
-        background: #047857;
+    &:hover {                      /* Quando o mouse passa sobre o botão */
+        background: #047857;       /* Fundo verde mais escuro */
     }
 }
 
 /* TABELA */
 .caixa-tabela {
-    background: #1F2937;
-    border: 1px solid #374151;
-    border-radius: 10px;
-    margin: 0 auto;
-    overflow: auto;
-    max-height: 65%;
-    height: auto;
-    width: 95%;
+    background: #1F2937;           /* Cor de fundo azul escuro */
+    border: 1px solid #374151;     /* Borda cinza escuro */
+    border-radius: 10px;           /* Bordas arredondadas de 10px */
+    margin: 0 auto;                /* Centraliza horizontalmente */
+    overflow: auto;                /* Adiciona scroll se necessário */
+    max-height: 65%;               /* Altura máxima de 65% do container pai */
+    height: auto;                  /* Altura automática */
+    width: 95%;                    /* Largura de 95% do container pai */
 }
 
 table {
-    width: 100%;
-    border-collapse: collapse;
-    text-align: center;
-    overflow: hidden;
+    width: 100%;                   /* Largura total do container */
+    border-collapse: collapse;     /* Colapsa bordas da tabela */
+    text-align: center;            /* Centraliza texto nas células */
+    overflow: hidden;              /* Oculta overflow */
 }
 
 thead {
-    background: #374151;
+    background: #374151;           /* Fundo cinza escuro para cabeçalho */
 }
 
 th {
-    padding: 10px;
-    font-size: 13px;
-    color: #9CA3AF;
-    text-transform: uppercase;
+    padding: 10px;                 /* Espaçamento interno de 10px */
+    font-size: 13px;               /* Tamanho da fonte 13px */
+    color: #9CA3AF;                /* Cor cinza para texto */
+    text-transform: uppercase;     /* Transforma texto em maiúsculas */
 }
 
 td {
-    padding: 14px;
-    font-size: 15px;
+    padding: 14px;                 /* Espaçamento interno de 14px */
+    font-size: 15px;               /* Tamanho da fonte 15px */
 }
 
-tr:hover td {
-    background: #273043;
+tr:hover td {                      /* Quando o mouse passa sobre uma linha */
+    background: #273043;           /* Fundo azul escuro para células */
 }
 
 .alerta-baixo {
-    font-weight: bold;
-    color: #FACC15;
+    font-weight: bold;             /* Texto em negrito */
+    color: #FACC15;                /* Cor amarela para alerta */
 }
 
 td .caixa-acoes {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
+    display: flex;                 /* Ativa Flexbox */
+    justify-content: center;       /* Centraliza horizontalmente */
+    gap: 8px;                      /* Espaço de 8px entre botões */
 }
 
 /* MODAL */
 .modal-fundo {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.70);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 20;
+    position: fixed;               /* Posição fixa na tela */
+    top: 0;                        /* Alinha ao topo */
+    left: 0;                       /* Alinha à esquerda */
+    width: 100%;                   /* Largura total da tela */
+    height: 100%;                  /* Altura total da tela */
+    background: rgba(0, 0, 0, 0.70); /* Fundo preto semi-transparente (70% opacidade) */
+    display: none;                 /* Inicialmente oculto */
+    justify-content: center;       /* Centraliza horizontalmente */
+    align-items: center;           /* Centraliza verticalmente */
+    z-index: 20;                   /* Z-index alto para ficar sobre outros elementos */
 }
 
 .modal-form {
-    background: #1F2937;
-    padding: 28px;
-    border-radius: 8px;
-    width: 90%;
-    max-width: 600px;
-    /* height: 450px; */
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* align-items: center; */
-    /* justify-content: center; */
-    position: relative;
-    border: 1px solid #374151;
+    background: #1F2937;           /* Cor de fundo azul escuro */
+    padding: 28px;                 /* Espaçamento interno de 28px */
+    border-radius: 8px;            /* Bordas arredondadas de 8px */
+    width: 90%;                    /* Largura de 90% do container pai */
+    max-width: 600px;              /* Largura máxima de 600px */
+    /* height: 450px; */            /* Altura fixa de 450px (comentada) */
+    /* display: flex; */            /* Ativa Flexbox (comentada) */
+    /* flex-direction: column; */   /* Organiza em coluna (comentada) */
+    /* align-items: center; */      /* Centraliza horizontalmente (comentada) */
+    /* justify-content: center; */  /* Centraliza verticalmente (comentada) */
+    position: relative;            /* Posição relativa para elementos filhos absolutos */
+    border: 1px solid #374151;     /* Borda cinza escuro */
 }
 
 .modal-close {
-    background: none;
-    color: #ccc;
-    border: none;
-    font-size: 28px;
-    position: absolute;
-    left: 90%;
-    top: 25px;
-    cursor: pointer;
+    background: none;              /* Fundo transparente */
+    color: #ccc;                   /* Cor cinza claro */
+    border: none;                  /* Remove borda padrão */
+    font-size: 28px;               /* Tamanho da fonte 28px */
+    position: absolute;            /* Posição absoluta dentro do modal */
+    left: 90%;                     /* Posiciona a 90% da largura do container */
+    top: 25px;                     /* Distância do topo 25px */
+    cursor: pointer;               /* Cursor de ponteiro */
 
-    &:hover {
-        color: #818cf8;
+    &:hover {                      /* Quando o mouse passa sobre o botão */
+        color: #818cf8;            /* Cor roxa */
     }
 }
 
 .modal-titulo {
-    font-size: 22px;
-    font-weight: 700;
-    color: #818cf8;
-    margin-bottom: 20px;
-    border-bottom: 1px solid #374151;
-    padding-bottom: 10px;
+    font-size: 22px;               /* Tamanho da fonte 22px */
+    font-weight: 700;              /* Peso da fonte 700 */
+    color: #818cf8;                /* Cor roxa */
+    margin-bottom: 20px;           /* Margem inferior de 20px */
+    border-bottom: 1px solid #374151; /* Borda inferior cinza escuro */
+    padding-bottom: 10px;          /* Padding inferior de 10px */
 }
 
 .modal-linha {
-    display: flex;
-    gap: 20px;
-    margin-bottom: 10px;
+    display: flex;                 /* Ativa Flexbox */
+    gap: 20px;                     /* Espaço de 20px entre elementos */
+    margin-bottom: 10px;           /* Margem inferior de 10px */
 }
 
 .modal-item {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
+    width: 100%;                   /* Largura total do container */
+    display: flex;                 /* Ativa Flexbox */
+    flex-direction: column;        /* Organiza em coluna */
+    gap: 4px;                      /* Espaço de 4px entre label e input */
 }
 
 .modal-item input,
 .modal-item select {
-    background: #374151;
-    border: 1px solid #4b5563;
-    padding: 10px;
-    border-radius: 6px;
-    color: white;
+    background: #374151;           /* Fundo cinza escuro */
+    border: 1px solid #4b5563;     /* Borda cinza médio */
+    padding: 10px;                 /* Espaçamento interno de 10px */
+    border-radius: 6px;            /* Bordas arredondadas de 6px */
+    color: white;                  /* Texto branco */
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px) {        /* Para telas com até 768px de largura */
     body {
-        margin-left: 10%;
+        margin-left: 10%;          /* Adiciona margem à esquerda para compensar sidebar */
     }
 
     .conteudo-principal{
-        width: 100%;
+        width: 100%;               /* Largura total do container */
     }
 
     .logo-sec {
-        display: none;
+        display: none;             /* Oculta a logo */
     }
 
     .botao-add,
     .botao-editar,
     .botao-remover {
-        font-size: 0px;
+        font-size: 0px;            /* Define tamanho da fonte como 0 (oculta texto) */
     }
     .botao-add i,
     .botao-editar i,
     .botao-remover i,
     .botao-confirmar i {
-        font-size: 14px;
+        font-size: 14px;           /* Tamanho do ícone 14px */
     }
 
     .modal-linha{
-        flex-direction: column;
+        flex-direction: column;    /* Organiza elementos em coluna */
     }
 
     .modal-close{
-        left: 85%;
+        left: 85%;                 /* Ajusta posição do botão fechar */
     }
 }
 
-@media (min-width: 769px) and (max-width: 1024px){
+@media (min-width: 769px) and (max-width: 1024px){ /* Para telas entre 769px e 1024px */
     body{
-        margin-left: 25%;
+        margin-left: 25%;          /* Adiciona margem à esquerda para compensar sidebar */
     }
 
     .conteudo-principal{
-        width: 100%;
+        width: 100%;               /* Largura total do container */
     }
 }
