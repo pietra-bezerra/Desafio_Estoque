@@ -1,228 +1,228 @@
-@import url('https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&display=swap'); /* Importa fonte do Google */
 
 body {
-    background-color: #111827;
-    color: #E5E7EB;
-    font-family: 'Geologica', sans-serif;
-    display: flex;
+    background-color: #111827;     /* Cor de fundo azul escuro */
+    color: #E5E7EB;                /* Cor do texto cinza claro */
+    font-family: 'Geologica', sans-serif; /* Define fonte padrão */
+    display: flex;                 /* Ativa Flexbox */
 }
 
 .main-container {
-    padding: 40px;
-    width: 85%;
+    padding: 40px;                 /* Espaçamento interno de 40px */
+    width: 85%;                    /* Largura de 85% do container pai */
 }
 
 .sec-config {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 35px;
+    display: flex;                 /* Ativa Flexbox */
+    justify-content: space-between; /* Espaça itens com espaço entre eles */
+    align-items: center;           /* Centraliza verticalmente */
+    margin-bottom: 35px;           /* Margem inferior de 35px */
 }
 
 .titulo-pagina {
-    font-size: 32px;
-    font-weight: bold;
-    color: #7C91F5;
+    font-size: 32px;               /* Tamanho da fonte 32px */
+    font-weight: bold;             /* Texto em negrito */
+    color: #7C91F5;                /* Cor roxa azulada */
 }
 
 .logo-pagina {
-    width: 100px;
+    width: 100px;                  /* Largura fixa de 100px */
 }
 
-.logo-pagina:hover {
-    transform: scale(1.05);
-    opacity: 1;
+.logo-pagina:hover {               /* Quando o mouse passa sobre a logo */
+    transform: scale(1.05);        /* Aumenta escala para 105% */
+    opacity: 1;                    /* Garante opacidade total (redundante) */
 }
 
 .header-desc {
-    margin-bottom: 25px;
+    margin-bottom: 25px;           /* Margem inferior de 25px */
 }
 
 .subtitulo {
-    font-size: 22px;
-    font-weight: 600;
-    color: #D1D5DB;
-    margin-bottom: 5px;
+    font-size: 22px;               /* Tamanho da fonte 22px */
+    font-weight: 600;              /* Peso da fonte 600 */
+    color: #D1D5DB;                /* Cor cinza claro */
+    margin-bottom: 5px;            /* Margem inferior de 5px */
 }
 
 .legenda {
-    color: #9CA3AF;
-    font-size: 14px;
-    font-style: italic;
+    color: #9CA3AF;                /* Cor cinza médio */
+    font-size: 14px;               /* Tamanho da fonte 14px */
+    font-style: italic;            /* Texto em itálico */
 }
 
 .form-section {
-    background: #1F2937;
-    border: 1px solid #374151;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, .4);
+    background: #1F2937;           /* Cor de fundo azul escuro */
+    border: 1px solid #374151;     /* Borda cinza escuro */
+    padding: 25px;                 /* Espaçamento interno de 25px */
+    border-radius: 12px;           /* Bordas arredondadas de 12px */
+    box-shadow: 0 0 15px rgba(0, 0, 0, .4); /* Sombra suave */
 }
 
 .form-produto {
-    display: flex;
-    flex-direction: row;
-    gap: 35px;
+    display: flex;                 /* Ativa Flexbox */
+    flex-direction: row;           /* Organiza itens em linha */
+    gap: 35px;                     /* Espaço de 35px entre colunas */
 }
 
 /* ESQUERDA */
 .coluna-esquerda {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
+    flex: 1;                       /* Ocupa espaço disponível restante */
+    display: flex;                 /* Ativa Flexbox */
+    flex-direction: column;        /* Organiza itens em coluna */
+    gap: 25px;                     /* Espaço de 25px entre elementos */
 }
 
 .box-titulo {
-    font-size: 20px;
-    color: #9FAAF1;
-    font-weight: 600;
-    border-bottom: 1px solid #374151;
-    padding-bottom: 6px;
+    font-size: 20px;               /* Tamanho da fonte 20px */
+    color: #9FAAF1;                /* Cor roxa azulada clara */
+    font-weight: 600;              /* Peso da fonte 600 */
+    border-bottom: 1px solid #374151; /* Borda inferior cinza escuro */
+    padding-bottom: 6px;           /* Padding inferior de 6px */
 }
 
 .caixa-input-prod {
-    display: flex;
-    flex-direction: column;
-    gap: 7px;
+    display: flex;                 /* Ativa Flexbox */
+    flex-direction: column;        /* Organiza em coluna */
+    gap: 7px;                      /* Espaço de 7px entre label e input */
 }
 
 .caixa-input-prod label {
-    font-size: 13px;
-    color: #B7BCC7;
+    font-size: 13px;               /* Tamanho da fonte 13px */
+    color: #B7BCC7;                /* Cor cinza claro azulado */
 }
 
 .caixa-input-prod input,
 .caixa-input-prod select {
-    width: 100%;
-    padding: 10px;
-    border-radius: 8px;
-    background: #303843;
-    border: 1px solid #4B5563;
-    color: #FFF;
-    transition: 0.2s;
+    width: 100%;                   /* Largura total do container */
+    padding: 10px;                 /* Espaçamento interno de 10px */
+    border-radius: 8px;            /* Bordas arredondadas de 8px */
+    background: #303843;           /* Cor de fundo cinza azulado escuro */
+    border: 1px solid #4B5563;     /* Borda cinza médio */
+    color: #FFF;                   /* Texto branco */
+    transition: 0.2s;              /* Transição suave de 0.2s */
 
-    &:focus {
-        border-color: #6366F1;
-        box-shadow: 0 0 7px #6366F170;
-        outline: none;
+    &:focus {                      /* Quando o elemento está em foco */
+        border-color: #6366F1;     /* Borda roxa */
+        box-shadow: 0 0 7px #6366F170; /* Sombra roxa com 70% opacidade */
+        outline: none;             /* Remove outline padrão */
     }
 }
 
 
 /* LINHA DUPLA */
 .linha-dupla {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
+    display: flex;                 /* Ativa Flexbox */
+    flex-direction: row;           /* Organiza itens em linha */
+    gap: 20px;                     /* Espaço de 20px entre elementos */
 }
 
 /* DIREITA */
 .coluna-direita {
-    width: 260px;
-    background: #2A323C;
-    border: 1px solid #4B5563;
-    border-radius: 10px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
+    width: 260px;                  /* Largura fixa de 260px */
+    background: #2A323C;           /* Cor de fundo cinza azulado escuro */
+    border: 1px solid #4B5563;     /* Borda cinza médio */
+    border-radius: 10px;           /* Bordas arredondadas de 10px */
+    padding: 20px;                 /* Espaçamento interno de 20px */
+    display: flex;                 /* Ativa Flexbox */
+    flex-direction: column;        /* Organiza itens em coluna */
+    gap: 25px;                     /* Espaço de 25px entre elementos */
 }
 
 .parametro-titulo {
-    font-size: 18px;
-    font-weight: bold;
-    color: #FFF;
+    font-size: 18px;               /* Tamanho da fonte 18px */
+    font-weight: bold;             /* Texto em negrito */
+    color: #FFF;                   /* Texto branco */
 }
 
 .btn-cadastro {
-    width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 8px;
-    font-size: 17px;
-    font-weight: bold;
-    color: white;
-    cursor: pointer;
-    background: #4F46E5;
-    transition: .2s;
-    display: flex;
-    gap: 8px;
-    justify-content: center;
-    align-items: center;
+    width: 100%;                   /* Largura total do container */
+    padding: 10px;                 /* Espaçamento interno de 10px */
+    border: none;                  /* Remove borda padrão */
+    border-radius: 8px;            /* Bordas arredondadas de 8px */
+    font-size: 17px;               /* Tamanho da fonte 17px */
+    font-weight: bold;             /* Texto em negrito */
+    color: white;                  /* Texto branco */
+    cursor: pointer;               /* Cursor de ponteiro */
+    background: #4F46E5;           /* Fundo roxo */
+    transition: .2s;               /* Transição suave de 0.2s */
+    display: flex;                 /* Ativa Flexbox */
+    gap: 8px;                      /* Espaço de 8px entre ícone e texto */
+    justify-content: center;       /* Centraliza horizontalmente */
+    align-items: center;           /* Centraliza verticalmente */
 
-    &:hover {
-        background: #4338CA;
-        transform: scale(1.04);
+    &:hover {                      /* Quando o mouse passa sobre o botão */
+        background: #4338CA;       /* Fundo roxo mais escuro */
+        transform: scale(1.04);    /* Aumenta escala para 104% */
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px) {        /* Para telas com até 768px de largura */
     body {
-        margin-left: 10%;
+        margin-left: 10%;          /* Adiciona margem à esquerda para compensar sidebar */
     }
 
     .logo-pagina {
-        display: none;
+        display: none;             /* Oculta a logo */
     }
 
     .form-produto {
-        flex-direction: column;
+        flex-direction: column;    /* Organiza elementos em coluna */
     }
 
     .coluna-direita {
-        flex: 1;
-        width: auto;
+        flex: 1;                   /* Ocupa espaço disponível */
+        width: auto;               /* Largura automática */
     }
 
     .main-container {
-        width: 100%;
+        width: 100%;               /* Largura total do container */
     }
 }
 
-@media (min-width: 769px) and (max-width: 1024px) {
+@media (min-width: 769px) and (max-width: 1024px) { /* Para telas entre 769px e 1024px */
     body {
-        margin-left: 25%;
+        margin-left: 25%;          /* Adiciona margem à esquerda para compensar sidebar */
     }
 
     .main-container {
-        width: 100%;
+        width: 100%;               /* Largura total do container */
     }
 }
 
 .modalzinha-fundo{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    position: fixed;
-    justify-content: center;
-    align-items: center;
-    background: rgba(0,0,0,0.5);
+    width: 100%;                   /* Largura total */
+    height: 100%;                  /* Altura total */
+    display: flex;                 /* Ativa Flexbox */
+    position: fixed;               /* Posição fixa na tela */
+    justify-content: center;       /* Centraliza horizontalmente */
+    align-items: center;           /* Centraliza verticalmente */
+    background: rgba(0,0,0,0.5);  /* Fundo preto semi-transparente */
 }
 
 .modal {
-    width: 350px;
-    height: 150px;
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    background: #1F2937;
-    border: 1px solid #374151;
+    width: 350px;                  /* Largura fixa de 350px */
+    height: 150px;                 /* Altura fixa de 150px */
+    border-radius: 15px;           /* Bordas arredondadas de 15px */
+    display: flex;                 /* Ativa Flexbox */
+    flex-direction: column;        /* Organiza itens em coluna */
+    align-items: center;           /* Centraliza horizontalmente */
+    justify-content: space-around; /* Espaça itens igualmente com espaço entre */
+    background: #1F2937;           /* Cor de fundo azul escuro */
+    border: 1px solid #374151;     /* Borda cinza escuro */
 }
 
 .modal button {
-    padding: 5px 30px;
-    background: #818CF8;
-    border: 2px solid #4F46E5;
-    cursor: pointer;
-    border-radius: 5px;
-    font-weight: bold;
-    color: #E5E7EB;
+    padding: 5px 30px;             /* Espaçamento interno vertical 5px, horizontal 30px */
+    background: #818CF8;           /* Fundo roxo */
+    border: 2px solid #4F46E5;     /* Borda roxa mais escura */
+    cursor: pointer;               /* Cursor de ponteiro */
+    border-radius: 5px;            /* Bordas arredondadas de 5px */
+    font-weight: bold;             /* Texto em negrito */
+    color: #E5E7EB;                /* Texto cinza claro */
 
-    &:hover {
-        border-color: #818CF8;
-        background: #4F46E5;
+    &:hover {                      /* Quando o mouse passa sobre o botão */
+        border-color: #818CF8;     /* Borda roxa clara */
+        background: #4F46E5;       /* Fundo roxo mais escuro */
     }
 }
