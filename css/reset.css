@@ -1,15 +1,15 @@
 /* Reset e Definições Globais */
 * {
-    margin: 0;
-    padding: 0;
-    top: 0;
-    left: 0;
+    margin: 0;                     /* Remove todas as margens padrão */
+    padding: 0;                    /* Remove todos os paddings padrão */
+    top: 0;                        /* Define top como 0 (menos comum em reset) */
+    left: 0;                       /* Define left como 0 (menos comum em reset) */
 
     /* Fonte Usada */
-    font-family: "Geologica", sans-serif;
-    outline: none;
-    box-sizing: border-box;
+    font-family: "Geologica", sans-serif; /* Define fonte padrão para todos os elementos */
+    outline: none;                 /* Remove outline padrão de elementos focados */
+    box-sizing: border-box;        /* Inclui padding e border no cálculo da largura/altura */
 
-    transition: 0.5s all;
-    scroll-behavior: smooth;
+    transition: 0.5s all;          /* Adiciona transição de 0.5s para todas as propriedades */
+    scroll-behavior: smooth;       /* Suaviza a rolagem da página */
 }
